@@ -17,6 +17,42 @@ interface Metrics {
   mobile: boolean | null;
   isVpn: boolean;
   isp: string | null;
+  browser: number | null; // browser privacy score 0-100
+}
+
+function browserPrivacyScore(): number | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const webrtc =
+      typeof window.RTCPeerConnection !== "undefined" ||
+      typeof (window as unknown as { webkitRTCPeerConnection?: unknown })
+        .webkitRTCPeerConnection !== "undefined";
+    let canvas = false;
+    let webgl = false;
+    const c = document.createElement("canvas");
+    canvas = !!c.getContext("2d");
+    webgl = !!(c.getContext("webgl") || c.getContext("experimental-webgl"));
+    const dnt =
+      navigator.doNotTrack === "1" ||
+      (window as unknown as { doNotTrack?: string }).doNotTrack === "1";
+    let s = 100;
+    if (webrtc) s -= 12;
+    if (!dnt) s -= 8;
+    if (canvas && webgl) s -= 6;
+    if (navigator.cookieEnabled) s -= 4;
+    s -= 6;
+    return Math.max(0, Math.min(100, s));
+  } catch {
+    return null;
+  }
+}
+
+function browserRating(score: number | null): Rating {
+  if (score == null) return "Fair";
+  if (score >= 80) return "Excellent";
+  if (score >= 65) return "Good";
+  if (score >= 50) return "Fair";
+  return "Poor";
 }
 
 interface Category {
@@ -99,12 +135,12 @@ function privacyRating(isVpn: boolean, secure: boolean): Rating {
 
 function buildReport(m: Metrics): Report {
   const categories: Category[] = [
-    { name: "Connection", rating: connectionRating(m.download, m.upload, m.latency) },
+    { name: "Network", rating: connectionRating(m.download, m.upload, m.latency) },
     { name: "Privacy", rating: privacyRating(m.isVpn, m.secure) },
     { name: "Gaming", rating: gamingRating(m.latency, m.jitter) },
     { name: "Streaming", rating: streamingRating(m.download) },
     { name: "Remote Work", rating: remoteRating(m.upload, m.latency) },
-    { name: "Video Calls", rating: callsRating(m.upload, m.latency, m.jitter) },
+    { name: "Browser", rating: browserRating(m.browser) },
   ];
   const overall = Math.round(
     categories.reduce((s, c) => s + POINTS[c.rating], 0) / categories.length
@@ -172,7 +208,7 @@ function buildReport(m: Metrics): Report {
     categories.find((c) => c.name === n)?.rating ?? "Fair";
   const good = (r: Rating) => r === "Excellent" || r === "Good";
   const summary = [
-    `Connection: ${byName("Connection")}. ${capability}`,
+    `Network: ${byName("Network")}. ${capability}`,
     `Privacy: ${byName("Privacy")}. Your IP address, ISP and approximate location are visible to websites. A VPN can mask your IP, though your browser may still reveal other details.`,
     `Gaming: ${byName("Gaming")}. ${
       good(byName("Gaming"))
@@ -273,6 +309,7 @@ export default function InternetHealthReport() {
           mobile: ipData?.mobile ?? null,
           isVpn: !!ipData?.vpn?.isVpn,
           isp: ipData?.isp ?? null,
+          browser: browserPrivacyScore(),
         };
         const r = buildReport(m);
         const s: Snapshot = {

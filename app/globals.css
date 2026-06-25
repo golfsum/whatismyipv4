@@ -1344,6 +1344,77 @@ a:hover {
   padding: 8px 16px;
   font-size: 13px;
 }
+/* Browser privacy score card */
+.privacy-score {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ps-ring {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 5px solid var(--border);
+}
+.ps-good {
+  border-color: var(--good);
+  background: rgba(46, 204, 113, 0.08);
+}
+.ps-warn {
+  border-color: var(--warn);
+  background: rgba(255, 176, 32, 0.08);
+}
+.ps-bad {
+  border-color: var(--bad);
+  background: rgba(255, 92, 124, 0.08);
+}
+.ps-num {
+  font-size: 40px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.ps-max {
+  font-size: 14px;
+  color: var(--muted);
+}
+.ps-meta {
+  flex: 1 1 260px;
+}
+.ps-meta h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+.ps-checklist {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 4px 16px;
+}
+.ps-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: #c9d3ec;
+  padding: 3px 0;
+}
+.ps-checklist .mark {
+  font-weight: 800;
+}
+.ps-checklist li.ok .mark {
+  color: var(--good);
+}
+.ps-checklist li.warn .mark {
+  color: var(--warn);
+}
+
 .ping-bars {
   display: flex;
   align-items: flex-end;

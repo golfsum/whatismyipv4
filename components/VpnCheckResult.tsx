@@ -110,14 +110,23 @@ export default function VpnCheckResult() {
         <div className="vpn-suggest">
           <p>
             VPN detected. Your public IP appears to be masked. To be thorough,
-            run a leak test to make sure your real IP and DNS requests
-            aren&apos;t leaking outside the tunnel.
+            confirm nothing is leaking outside the tunnel and check what your
+            browser still reveals:
           </p>
-          <p>
-            <a className="cta cta-primary" href="/dns-leak-test">
-              Run a DNS &amp; IP leak test →
+          <div className="card-grid">
+            <a href="/dns-leak-test" className="tool-card">
+              <span className="tc-label">DNS &amp; IP Leak Test</span>
+              <span className="tc-desc">Check for WebRTC and DNS leaks.</span>
             </a>
-          </p>
+            <a href="/ip-leak-test" className="tool-card">
+              <span className="tc-label">IP Leak Test</span>
+              <span className="tc-desc">Confirm your real IP stays hidden.</span>
+            </a>
+            <a href="/browser-info" className="tool-card">
+              <span className="tc-label">Browser Fingerprint</span>
+              <span className="tc-desc">See what your browser still exposes.</span>
+            </a>
+          </div>
         </div>
       )}
     </section>

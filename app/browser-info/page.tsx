@@ -72,7 +72,7 @@ export default function Page() {
             <strong>browser fingerprint</strong>: a combination unique enough to
             recognise you across visits, even in private mode and without cookies.
           </p>
-          <h3>What the values mean</h3>
+          <h3>What each value means</h3>
           <ul>
             <li>
               <strong>Browser &amp; engine</strong>: the software rendering this
@@ -83,12 +83,48 @@ export default function Page() {
               whether you&apos;re on desktop, mobile or tablet.
             </li>
             <li>
-              <strong>Screen &amp; viewport</strong>: display size, color depth
-              and pixel ratio.
+              <strong>Screen, viewport &amp; pixel ratio</strong>: your display
+              size and density. An unusual combination helps fingerprinting.
             </li>
             <li>
               <strong>Time zone &amp; language</strong>: strong hints about your
               region, independent of your <a href="/ip-location">IP location</a>.
+            </li>
+            <li>
+              <strong>Color scheme</strong>: whether you prefer light or dark
+              mode, exposed by the browser to style pages.
+            </li>
+            <li>
+              <strong>CPU cores &amp; device memory</strong>: rough hardware
+              specs some browsers report, used to tune performance and, sadly, to
+              fingerprint.
+            </li>
+            <li>
+              <strong>Cookies</strong>: whether the browser stores cookies. With
+              them on, sites can remember you across visits.
+            </li>
+            <li>
+              <strong>Do Not Track</strong>: a request not to be tracked. It&apos;s
+              optional for sites to honour, so it&apos;s a weak signal.
+            </li>
+            <li>
+              <strong>WebRTC</strong>: a feature that can leak your real IP, even
+              behind a VPN. Test it with our{" "}
+              <a href="/ip-leak-test">IP leak test</a>.
+            </li>
+            <li>
+              <strong>Canvas &amp; WebGL</strong>: drawing APIs that render
+              slightly differently on each device, a powerful fingerprinting
+              source.
+            </li>
+            <li>
+              <strong>User agent</strong>: the identification string your browser
+              sends. Decode yours with the{" "}
+              <a href="/user-agent">user agent tool</a>.
+            </li>
+            <li>
+              <strong>Privacy score</strong>: our summary of how exposed your
+              browser is, based on the signals above.
             </li>
           </ul>
           <h2>Protecting your privacy</h2>
