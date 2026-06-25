@@ -441,6 +441,20 @@ a:hover {
   font-size: 14px;
   color: var(--muted);
 }
+.report-summary {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.report-summary li {
+  font-size: 14px;
+  color: #c9d3ec;
+  padding: 7px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+}
+.report-summary li:last-child {
+  border-bottom: 0;
+}
 
 /* Favorite tools */
 .tool-card-wrap {
@@ -538,26 +552,100 @@ a:hover {
   text-decoration: none;
 }
 
-/* Print / Save as PDF */
+/* Print / Save as PDF - force readable dark-on-white */
 @media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
   .site-header,
   .site-footer,
   .ad,
   .ad--placeholder,
   .report-actions,
   .cta-row,
-  .breadcrumbs {
+  .breadcrumbs,
+  .copy-btn,
+  .copy-icon,
+  .fav-star,
+  .chip-btn,
+  .port-presets,
+  .tool-form,
+  .aff-cta,
+  button,
+  .no-print {
     display: none !important;
   }
-  body {
-    background: #fff;
-    color: #000;
+  .container {
+    max-width: 100% !important;
   }
+  .ip-hero,
   .report,
+  .health,
+  .tool,
+  .tool-result,
   .card,
-  .health {
-    box-shadow: none;
-    border-color: #ccc;
+  .tool-card,
+  .cat-card,
+  .guide-card,
+  .vpn-banner,
+  .aff-card,
+  .map-wrap,
+  .speedtest,
+  .callout,
+  .toc,
+  .health-chip,
+  .speed-stat {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid #d1d5db !important;
+    box-shadow: none !important;
+  }
+  .ip-hero *,
+  .report *,
+  .health *,
+  .tool *,
+  .card *,
+  .tool-card *,
+  .cat-card *,
+  .guide-card *,
+  .vpn-banner *,
+  .aff-card *,
+  .content *,
+  .faq * {
+    color: #111827 !important;
+  }
+  .muted,
+  .tc-desc,
+  .gc-desc,
+  .rg-label,
+  .cat-name,
+  .hc-label,
+  .guide-meta,
+  .speed-stat-label {
+    color: #4b5563 !important;
+  }
+  a {
+    color: #2563eb !important;
+    text-decoration: underline;
+  }
+  /* Gradient text-fill prints as invisible; force a solid colour. */
+  .gauge-num,
+  .rs-num,
+  .health-num,
+  .stat-num,
+  .grade-num {
+    -webkit-text-fill-color: #111827 !important;
+    color: #111827 !important;
+    background: none !important;
+  }
+  iframe,
+  .map-wrap iframe {
+    max-height: 300px;
   }
 }
 

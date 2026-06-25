@@ -58,7 +58,7 @@ export const CATEGORIES: Category[] = [
     overview: [
       "Every site you visit learns more about you than you'd expect, from your IP and rough location to your browser fingerprint. These tools show exactly what's visible, and the guides explain how to take back control.",
     ],
-    toolHrefs: ["/vpn-check", "/proxy-check", "/ip-leak-test", "/hide-my-ip", "/browser-info"],
+    toolHrefs: ["/vpn-check", "/proxy-check", "/ip-leak-test", "/dns-leak-test", "/hide-my-ip", "/browser-info"],
     guideSlugs: [
       "can-someone-find-my-location-from-my-ip",
       "what-websites-can-see-about-you",
@@ -117,7 +117,7 @@ export const CATEGORIES: Category[] = [
     overview: [
       "DNS is the internet's address book, turning names into IP addresses. These tools let you inspect any domain's records, and the guides explain how to speed up and secure your own DNS.",
     ],
-    toolHrefs: ["/dns-lookup", "/reverse-dns", "/mx-lookup", "/spf-dmarc-lookup", "/dns-propagation", "/whois-lookup"],
+    toolHrefs: ["/dns-lookup", "/reverse-dns", "/mx-lookup", "/spf-dmarc-lookup", "/dns-propagation", "/ns-lookup", "/cname-lookup", "/txt-lookup", "/whois-lookup"],
     guideSlugs: [
       "what-is-dns",
       "how-to-change-dns",
@@ -241,6 +241,7 @@ export const CATEGORIES: Category[] = [
       "/http-header-check",
       "/security-header-analyzer",
       "/proxy-check",
+      "/dns-leak-test",
     ],
     guideSlugs: [
       "what-websites-can-see-about-you",

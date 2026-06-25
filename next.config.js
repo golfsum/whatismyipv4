@@ -12,6 +12,12 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Topic hubs moved from /category/* to /topics/*.
+      { source: "/category/:slug", destination: "/topics/:slug", permanent: true },
+    ];
+  },
 };
 
 module.exports = nextConfig;

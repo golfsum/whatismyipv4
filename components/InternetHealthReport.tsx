@@ -35,6 +35,7 @@ interface Report {
   findings: Finding[];
   suggestions: string[];
   capability: string;
+  summary: string[];
 }
 
 const POINTS: Record<Rating, number> = {
@@ -167,7 +168,20 @@ function buildReport(m: Metrics): Report {
       ? `Your connection appears capable of ${caps.join(", ").replace(/, ([^,]*)$/, " and $1")}.`
       : "Your connection may struggle with demanding tasks like 4K streaming or competitive gaming.";
 
-  return { overall, categories, findings, suggestions, capability };
+  const byName = (n: string) =>
+    categories.find((c) => c.name === n)?.rating ?? "Fair";
+  const good = (r: Rating) => r === "Excellent" || r === "Good";
+  const summary = [
+    `Connection: ${byName("Connection")}. ${capability}`,
+    `Privacy: ${byName("Privacy")}. Your IP address, ISP and approximate location are visible to websites. A VPN can mask your IP, though your browser may still reveal other details.`,
+    `Gaming: ${byName("Gaming")}. ${
+      good(byName("Gaming"))
+        ? "Your latency looks usable for most online games."
+        : "If you hit lag, run the ping test and check for packet loss."
+    }`,
+  ];
+
+  return { overall, categories, findings, suggestions, capability, summary };
 }
 
 // ---- measurement ----------------------------------------------------------
@@ -381,6 +395,12 @@ export default function InternetHealthReport() {
               .
             </p>
           )}
+
+          <ul className="report-summary">
+            {report.summary.map((s, i) => (
+              <li key={i}>{s}</li>
+            ))}
+          </ul>
 
           <div className="report-cats">
             {report.categories.map((c) => (

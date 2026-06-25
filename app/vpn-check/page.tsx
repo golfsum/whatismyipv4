@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import IpDashboard from "@/components/IpDashboard";
+import VpnCheckResult from "@/components/VpnCheckResult";
 import AdUnit from "@/components/AdUnit";
 import Faq, { QA } from "@/components/Faq";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
@@ -61,7 +61,7 @@ export default function Page() {
           </p>
         </section>
 
-        <IpDashboard />
+        <VpnCheckResult />
 
         <AdUnit slot={ADSENSE_SLOT_TOP} label="Advertisement" />
 

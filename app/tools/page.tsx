@@ -40,7 +40,7 @@ export default function ToolsHub() {
           <ul className="link-list">
             {CATEGORIES.map((c) => (
               <li key={c.slug}>
-                <a href={`/category/${c.slug}`}>{c.name}</a>
+                <a href={`/topics/${c.slug}`}>{c.name}</a>
               </li>
             ))}
           </ul>

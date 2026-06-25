@@ -37,6 +37,7 @@ export const TOOLS: Tool[] = [
   { href: "/ssl-checker", label: "SSL Checker", desc: "Inspect a site's HTTPS certificate.", category: "Security", live: true },
   { href: "/http-header-check", label: "HTTP Headers", desc: "View response & security headers.", category: "Security", live: true },
   { href: "/security-header-analyzer", label: "Security Headers", desc: "Grade a site's security headers.", category: "Security", live: true },
+  { href: "/dns-leak-test", label: "DNS Leak Test", desc: "Check for VPN IP/DNS leaks.", category: "Security", live: true },
 
   // DNS
   { href: "/dns-lookup", label: "DNS Lookup", desc: "A, AAAA, CNAME, NS, TXT records.", category: "DNS", live: true },
@@ -47,6 +48,9 @@ export const TOOLS: Tool[] = [
 
   // Developer
   { href: "/whois-lookup", label: "WHOIS Lookup", desc: "Domain registration details.", category: "Developer", live: true },
+  { href: "/ns-lookup", label: "NS Lookup", desc: "Find a domain's name servers.", category: "Developer", live: true },
+  { href: "/cname-lookup", label: "CNAME Lookup", desc: "Check CNAME alias records.", category: "Developer", live: true },
+  { href: "/txt-lookup", label: "TXT Lookup", desc: "Check TXT records.", category: "Developer", live: true },
 ];
 
 export const TOOL_CATEGORIES: Tool["category"][] = [

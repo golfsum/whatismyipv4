@@ -48,7 +48,7 @@ export function SiteFooter() {
           <div className="footer-col">
             <h4>Topics</h4>
             {CATEGORIES.map((c) => (
-              <a key={c.slug} href={`/category/${c.slug}`}>
+              <a key={c.slug} href={`/topics/${c.slug}`}>
                 {c.name}
               </a>
             ))}

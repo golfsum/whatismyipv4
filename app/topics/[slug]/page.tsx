@@ -24,12 +24,16 @@ export async function generateMetadata({
   return {
     title: cat.title,
     description: cat.description,
-    alternates: { canonical: `/category/${cat.slug}` },
-    openGraph: { title: cat.title, description: cat.description, url: `/category/${cat.slug}` },
+    alternates: { canonical: `/topics/${cat.slug}` },
+    openGraph: {
+      title: cat.title,
+      description: cat.description,
+      url: `/topics/${cat.slug}`,
+    },
   };
 }
 
-export default async function CategoryPage({
+export default async function TopicPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -56,7 +60,7 @@ export default async function CategoryPage({
           items={[
             { name: "Home", href: "/" },
             { name: "Topics", href: "/tools" },
-            { name: cat.name, href: `/category/${cat.slug}` },
+            { name: cat.name, href: `/topics/${cat.slug}` },
           ]}
         />
         <section className="hero">
@@ -121,7 +125,7 @@ export default async function CategoryPage({
             <ul className="link-list">
               {related.map((c) => (
                 <li key={c.slug}>
-                  <a href={`/category/${c.slug}`}>{c.name}</a>
+                  <a href={`/topics/${c.slug}`}>{c.name}</a>
                 </li>
               ))}
             </ul>
@@ -131,7 +135,7 @@ export default async function CategoryPage({
       <SiteFooter />
 
       <Script
-        id={`ld-faq-cat-${cat.slug}`}
+        id={`ld-faq-topic-${cat.slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -146,7 +150,7 @@ export default async function CategoryPage({
         }}
       />
       <Script
-        id={`ld-breadcrumb-cat-${cat.slug}`}
+        id={`ld-breadcrumb-topic-${cat.slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -158,7 +162,7 @@ export default async function CategoryPage({
                 "@type": "ListItem",
                 position: 2,
                 name: cat.name,
-                item: `${SITE_URL}/category/${cat.slug}`,
+                item: `${SITE_URL}/topics/${cat.slug}`,
               },
             ],
           }),

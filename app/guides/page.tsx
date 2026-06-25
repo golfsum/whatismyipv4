@@ -33,6 +33,20 @@ export default function GuidesHub() {
 
         <AdUnit slot={ADSENSE_SLOT_TOP} label="Advertisement" />
 
+        <section className="content">
+          <h2>Trending searches</h2>
+          <ul className="link-list">
+            <li><a href="/guides/why-is-my-internet-slow">Why is my internet slow?</a></li>
+            <li><a href="/guides/how-to-lower-ping">How to lower ping</a></li>
+            <li><a href="/guides/ipv4-vs-ipv6">IPv4 vs IPv6</a></li>
+            <li><a href="/browser-info">Browser fingerprint test</a></li>
+            <li><a href="/guides/vpn-vs-proxy">VPN vs Proxy</a></li>
+            <li><a href="/guides/best-dns-servers">Best DNS servers</a></li>
+            <li><a href="/guides/packet-loss-explained">Packet loss explained</a></li>
+            <li><a href="/what-is-my-ipv6">What is my IPv6?</a></li>
+          </ul>
+        </section>
+
         <div className="content">
           {GUIDE_CATEGORIES.map((cat) => {
             const items = GUIDES.filter((g) => g.category === cat);

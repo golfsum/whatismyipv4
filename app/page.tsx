@@ -18,9 +18,8 @@ const FEATURED = [
   "/",
   "/speedtest",
   "/vpn-check",
-  "/ip-location",
-  "/dns-lookup",
   "/browser-info",
+  "/dns-lookup",
   "/ssl-checker",
   "/subnet-calculator",
   "/whois-lookup",
@@ -78,11 +77,11 @@ export default function Home() {
             information and network health, all in one place. Free, no signup.
           </p>
           <div className="cta-row">
-            <a className="cta cta-primary" href="/speedtest">
-              Speed Test
+            <a className="cta cta-primary" href="/internet-health-check">
+              Run Full Internet Check
             </a>
-            <a className="cta" href="/vpn-check">
-              VPN Check
+            <a className="cta" href="/speedtest">
+              Speed Test
             </a>
             <a className="cta" href="/tools">
               All Tools
@@ -118,7 +117,7 @@ export default function Home() {
           <p>Pick a topic to find the right tools and guides for the job.</p>
           <div className="card-grid">
             {CATEGORIES.map((c) => (
-              <a key={c.slug} href={`/category/${c.slug}`} className="tool-card">
+              <a key={c.slug} href={`/topics/${c.slug}`} className="tool-card">
                 <span className="tc-label">{c.name}</span>
                 <span className="tc-desc">{c.description}</span>
               </a>
