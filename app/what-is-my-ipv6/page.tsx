@@ -6,7 +6,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "What Is My IPv6 Address? — Find & Test Your IPv6",
+  title: "What Is My IPv6 Address? - Find & Test Your IPv6",
   description:
     "What is my IPv6 address? Instantly see your public IPv6 (and IPv4) address, check whether your connection supports IPv6, and learn what IPv6 means. Free, no signup.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/what-is-my-ipv6" },
   openGraph: {
-    title: "What Is My IPv6 Address? — Find & Test Your IPv6",
+    title: "What Is My IPv6 Address? - Find & Test Your IPv6",
     description:
       "See your public IPv6 address and check if your connection supports IPv6.",
     url: "/what-is-my-ipv6",
@@ -34,7 +34,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Why does it say 'Not detected' for IPv6?",
-    a: "It means your current network connected over IPv4 only. Many home and mobile networks have not enabled IPv6 yet. This is normal and your internet will work fine — you simply do not have a public IPv6 address right now.",
+    a: "It means your current network connected over IPv4 only. Many home and mobile networks have not enabled IPv6 yet. This is normal and your internet will work fine - you simply do not have a public IPv6 address right now.",
   },
   {
     q: "Is IPv6 better than IPv4?",
@@ -81,7 +81,7 @@ export default function Page() {
           <p>
             If the IPv6 field above shows an address, your connection is{" "}
             <strong>IPv6-enabled</strong>. If it says &quot;Not detected,&quot;
-            your network is currently IPv4-only — which is still very common and
+            your network is currently IPv4-only - which is still very common and
             perfectly fine. Whether you get IPv6 depends on your ISP, your router
             settings and the network you are on.
           </p>

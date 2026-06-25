@@ -328,17 +328,31 @@ a:hover {
 .chip {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 14px;
   padding: 7px 14px;
   font-size: 13px;
   color: var(--muted);
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
+  max-width: 100%;
+  min-width: 0;
 }
 .chip strong {
   color: var(--text);
   font-family: ui-monospace, Menlo, Consolas, monospace;
+  min-width: 0;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .ip-hero {
+    padding: 22px 14px;
+  }
+  .ip-row {
+    gap: 8px;
+  }
 }
 .copy-icon {
   display: inline-grid;

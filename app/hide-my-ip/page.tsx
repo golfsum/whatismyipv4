@@ -5,7 +5,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "How to Hide My IP Address — VPN, Proxy & Tor Compared (2026)",
+  title: "How to Hide My IP Address - VPN, Proxy & Tor Compared (2026)",
   description:
     "How to hide your IP address in 2026: compare VPNs, proxies, Tor and Wi-Fi switching. Learn the safest way to mask your IP, why you'd want to, and the trade-offs of each.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/hide-my-ip" },
   openGraph: {
-    title: "How to Hide My IP Address — VPN, Proxy & Tor Compared",
+    title: "How to Hide My IP Address - VPN, Proxy & Tor Compared",
     description:
       "Compare the ways to hide or change your IP address and their trade-offs.",
     url: "/hide-my-ip",
@@ -54,13 +54,13 @@ export default function Page() {
           <p>
             Your public IP reveals your approximate location and ISP. Here are
             the practical ways to <strong>hide or change your IP address</strong>{" "}
-            — and the trade-offs of each.
+            - and the trade-offs of each.
           </p>
         </section>
 
         <div className="callout">
           First, <a href="/">see your current public IP</a> and{" "}
-          <a href="/vpn-check">run a VPN check</a> — then come back and compare
+          <a href="/vpn-check">run a VPN check</a> - then come back and compare
           your options below.
         </div>
 

@@ -1,4 +1,4 @@
-// Central registry of tools — used by the homepage cards, footer, sitemap and
+// Central registry of tools - used by the homepage cards, footer, sitemap and
 // internal-link sections so everything stays consistent.
 
 export interface Tool {

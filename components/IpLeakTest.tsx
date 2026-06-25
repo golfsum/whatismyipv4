@@ -94,7 +94,7 @@ export default function IpLeakTest() {
 
       {status === "unsupported" && (
         <p className="muted" style={{ marginTop: 16 }}>
-          Your browser has WebRTC disabled — that&apos;s good for privacy. No IPs
+          Your browser has WebRTC disabled - that&apos;s good for privacy. No IPs
           could leak via WebRTC.
         </p>
       )}
@@ -148,7 +148,7 @@ export default function IpLeakTest() {
               </table>
               <p className="muted" style={{ marginTop: 8 }}>
                 Modern browsers hide your true local IP behind an mDNS{" "}
-                <code>.local</code> name — that&apos;s expected and harmless.
+                <code>.local</code> name - that&apos;s expected and harmless.
               </p>
             </>
           )}

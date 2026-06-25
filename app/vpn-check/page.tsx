@@ -6,7 +6,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "VPN Check — Is My VPN Working? (Free VPN & Proxy Test)",
+  title: "VPN Check - Is My VPN Working? (Free VPN & Proxy Test)",
   description:
     "Is my VPN working? Free VPN check tests whether your connection is routed through a VPN or proxy, shows the IP and location others see, and detects leaks. No signup.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/vpn-check" },
   openGraph: {
-    title: "VPN Check — Is My VPN Working?",
+    title: "VPN Check - Is My VPN Working?",
     description:
       "Test whether your connection is routed through a VPN or proxy and see the IP others see.",
     url: "/vpn-check",
@@ -43,7 +43,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is a DNS or IP leak?",
-    a: "A leak happens when some of your traffic bypasses the VPN tunnel, exposing your real IP or DNS provider. If the IP shown here is your real one while your VPN is connected, you may have a leak — try reconnecting or enabling your VPN's kill switch.",
+    a: "A leak happens when some of your traffic bypasses the VPN tunnel, exposing your real IP or DNS provider. If the IP shown here is your real one while your VPN is connected, you may have a leak - try reconnecting or enabling your VPN's kill switch.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Page() {
       <SiteHeader />
       <main className="container">
         <section className="hero">
-          <h1>VPN Check — Is My VPN Working?</h1>
+          <h1>VPN Check - Is My VPN Working?</h1>
           <p>
             Instantly test whether your connection is routed through a{" "}
             <strong>VPN or proxy</strong>, and see the exact IP address and
@@ -70,7 +70,7 @@ export default function Page() {
           <ol>
             <li>
               <strong>Turn your VPN off</strong> and note the IP and city shown
-              above — that&apos;s your real connection.
+              above - that&apos;s your real connection.
             </li>
             <li>
               <strong>Connect your VPN</strong> and reload this page.
@@ -89,7 +89,7 @@ export default function Page() {
             traffic is going through a VPN. A normal home or mobile connection
             reports <strong>&quot;No VPN detected&quot;</strong>. Note that some
             privacy-focused VPNs use residential-looking IPs and can slip past
-            detection — a non-detection is not proof your VPN is off.
+            detection - a non-detection is not proof your VPN is off.
           </p>
 
           <h2>Why use a VPN?</h2>

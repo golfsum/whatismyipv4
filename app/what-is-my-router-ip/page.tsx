@@ -5,7 +5,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "What Is My Router IP? — Find Your Default Gateway (192.168.x.x)",
+  title: "What Is My Router IP? - Find Your Default Gateway (192.168.x.x)",
   description:
     "What is my router IP address? Learn how to find your router's local gateway IP (like 192.168.0.1 or 192.168.1.1) on Windows, Mac, Android and iPhone, plus a list of common defaults.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/what-is-my-router-ip" },
   openGraph: {
-    title: "What Is My Router IP? — Find Your Default Gateway",
+    title: "What Is My Router IP? - Find Your Default Gateway",
     description:
       "How to find your router's local gateway IP on any device, plus common defaults.",
     url: "/what-is-my-router-ip",
@@ -39,7 +39,7 @@ const COMMON: { brand: string; ip: string }[] = [
 const FAQ: QA[] = [
   {
     q: "What is my router's IP address?",
-    a: "Your router's IP (the 'default gateway') is the local address you type into a browser to open its settings — most often 192.168.1.1, 192.168.0.1 or 10.0.0.1. It is a private address used only inside your home network.",
+    a: "Your router's IP (the 'default gateway') is the local address you type into a browser to open its settings - most often 192.168.1.1, 192.168.0.1 or 10.0.0.1. It is a private address used only inside your home network.",
   },
   {
     q: "What is the difference between my router IP and my public IP?",
@@ -50,7 +50,7 @@ const FAQ: QA[] = [
     a: "Type your router's IP into a web browser's address bar and press Enter. Enter the admin username and password (often printed on a sticker on the router). If you've never changed them, common defaults are admin/admin or admin/password.",
   },
   {
-    q: "192.168.1.1 isn't loading — what now?",
+    q: "192.168.1.1 isn't loading - what now?",
     a: "Make sure you're connected to that router's Wi-Fi or cable, then find the real gateway using the steps above (it may be 192.168.0.1 or 10.0.0.1). Check for typos, and try a different browser or incognito window.",
   },
 ];
@@ -64,7 +64,7 @@ export default function Page() {
           <h1>What Is My Router IP Address?</h1>
           <p>
             Your <strong>router IP</strong> (default gateway) is the local
-            address you use to open your router&apos;s settings — usually
+            address you use to open your router&apos;s settings - usually
             something like <code>192.168.1.1</code>. Here&apos;s how to find it
             on any device.
           </p>
@@ -72,7 +72,7 @@ export default function Page() {
 
         <div className="callout">
           <strong>Looking for your public IP instead?</strong> That&apos;s the
-          address the internet sees — <a href="/">check your public IP here</a>.
+          address the internet sees - <a href="/">check your public IP here</a>.
           This page is about your <em>local</em> router/gateway address.
         </div>
 
@@ -131,7 +131,7 @@ export default function Page() {
 
           <h2>Router IP vs public IP</h2>
           <p>
-            Your <strong>router IP</strong> is private — it only works inside
+            Your <strong>router IP</strong> is private - it only works inside
             your home and every household uses similar ranges. Your{" "}
             <a href="/what-is-my-ipv4">public IPv4 address</a> is what the
             internet sees. Curious where that places you?{" "}

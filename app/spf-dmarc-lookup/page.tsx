@@ -7,7 +7,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "SPF & DMARC Lookup — Check Email Security Records",
+  title: "SPF & DMARC Lookup - Check Email Security Records",
   description:
     "Free SPF and DMARC checker. Look up a domain's SPF and DMARC email-authentication records to see if it's protected against spoofing. Runs via DNS-over-HTTPS.",
   keywords: [
@@ -33,7 +33,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Do I need both SPF and DMARC?",
-    a: "Yes — together with DKIM they form modern email authentication. SPF and DKIM verify the sender; DMARC enforces a policy and gives you visibility. Missing records make your domain easier to spoof.",
+    a: "Yes - together with DKIM they form modern email authentication. SPF and DKIM verify the sender; DMARC enforces a policy and gives you visibility. Missing records make your domain easier to spoof.",
   },
   {
     q: "What does a good DMARC policy look like?",
@@ -56,7 +56,7 @@ export default function Page() {
           <h1>SPF &amp; DMARC Lookup</h1>
           <p>
             Check whether a domain has SPF and DMARC email-authentication records
-            — the records that stop attackers spoofing its email.
+            - the records that stop attackers spoofing its email.
           </p>
         </section>
 
@@ -70,23 +70,23 @@ export default function Page() {
             Without authentication, anyone can forge email that appears to come
             from your domain. <strong>SPF</strong>, <strong>DKIM</strong> and{" "}
             <strong>DMARC</strong> work together to prove a message is genuine and
-            tell receivers how to handle fakes — protecting your brand and
+            tell receivers how to handle fakes - protecting your brand and
             improving deliverability.
           </p>
           <h3>What this tool checks</h3>
           <ul>
             <li>
-              <strong>SPF</strong> — the <code>v=spf1</code> TXT record on your
+              <strong>SPF</strong> - the <code>v=spf1</code> TXT record on your
               domain listing authorised senders.
             </li>
             <li>
-              <strong>DMARC</strong> — the <code>v=DMARC1</code> TXT record at{" "}
+              <strong>DMARC</strong> - the <code>v=DMARC1</code> TXT record at{" "}
               <code>_dmarc.yourdomain</code> defining your enforcement policy.
             </li>
           </ul>
           <p>
             DKIM uses a selector that varies per provider, so it isn&apos;t
-            auto-discoverable here — check your email provider&apos;s docs for
+            auto-discoverable here - check your email provider&apos;s docs for
             your DKIM selector.
           </p>
           <h2>Related tools</h2>

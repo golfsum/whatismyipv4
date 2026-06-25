@@ -206,7 +206,7 @@ export default function IpDashboard() {
           rows={[
             ["City", data?.city],
             ["Region", data?.region],
-            ["Country", data ? `${flagEmoji(data.countryCode)} ${data.country ?? "—"}` : null],
+            ["Country", data ? `${flagEmoji(data.countryCode)} ${data.country ?? "-"}` : null],
             ["Postal", data?.zip],
             ["Timezone", data?.timezone],
           ]}
@@ -322,7 +322,7 @@ function DetailCard({
       {rows.map(([k, v]) => (
         <div className="kv" key={k}>
           <span className="k">{k}</span>
-          <span className="v">{loading ? SK : v ?? "—"}</span>
+          <span className="v">{loading ? SK : v ?? "-"}</span>
         </div>
       ))}
     </div>

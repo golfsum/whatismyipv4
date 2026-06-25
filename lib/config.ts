@@ -47,4 +47,4 @@ export const ADSENSE_ENABLED =
 //   ANALYTICS_SALT (optional) -> salt used when hashing visitor fingerprints
 //   IGNORED_IPS (optional)    -> comma-separated IPs to exclude from view
 //                                counts, e.g. your own IP "203.0.113.7, 2001:db8::1"
-// These are intentionally NOT exposed here — they must stay server-side.
+// These are intentionally NOT exposed here - they must stay server-side.

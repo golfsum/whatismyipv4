@@ -55,7 +55,7 @@ export function SiteFooter() {
         </div>
         <div className="footer-bottom">
           <div>
-            © {new Date().getFullYear()} {SITE_NAME} — Internet diagnostics &amp;
+            © {new Date().getFullYear()} {SITE_NAME} - Internet diagnostics &amp;
             network tools.
           </div>
           <div>

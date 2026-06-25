@@ -4,7 +4,7 @@ import { SITE_NAME, CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Get in touch with the ${SITE_NAME} team — feedback, bug reports, tool requests and privacy questions.`,
+  description: `Get in touch with the ${SITE_NAME} team - feedback, bug reports, tool requests and privacy questions.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -32,15 +32,15 @@ export default function Page() {
       <h2>What to include</h2>
       <ul>
         <li>
-          <strong>Bug reports</strong> — which tool, your browser/device, and
+          <strong>Bug reports</strong> - which tool, your browser/device, and
           what happened.
         </li>
         <li>
-          <strong>Tool requests</strong> — what you&apos;d like to test or
+          <strong>Tool requests</strong> - what you&apos;d like to test or
           calculate.
         </li>
         <li>
-          <strong>Privacy questions</strong> — see our{" "}
+          <strong>Privacy questions</strong> - see our{" "}
           <a href="/privacy">Privacy Policy</a> first; we&apos;re happy to clarify
           anything.
         </li>

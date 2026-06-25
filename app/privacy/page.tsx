@@ -41,7 +41,7 @@ export default function Page() {
         <li>
           <strong>Anonymous usage analytics.</strong> We count page views and
           unique visitors. Visitors are de-duplicated using a salted, one-way
-          hash — we do <em>not</em> store your raw IP address in our analytics.
+          hash - we do <em>not</em> store your raw IP address in our analytics.
         </li>
       </ul>
 
@@ -94,7 +94,7 @@ export default function Page() {
       <p>To provide our tools we send requests to these providers:</p>
       <ul>
         <li>
-          <strong>Google AdSense</strong> — advertising (
+          <strong>Google AdSense</strong> - advertising (
           <a
             href="https://policies.google.com/privacy"
             target="_blank"
@@ -105,17 +105,17 @@ export default function Page() {
           ).
         </li>
         <li>
-          <strong>ip-api.com</strong> — IP geolocation lookups.
+          <strong>ip-api.com</strong> - IP geolocation lookups.
         </li>
         <li>
-          <strong>Cloudflare</strong> — powers the internet speed test.
+          <strong>Cloudflare</strong> - powers the internet speed test.
         </li>
         <li>
-          <strong>Google &amp; Cloudflare DNS</strong> — DNS-over-HTTPS lookups
+          <strong>Google &amp; Cloudflare DNS</strong> - DNS-over-HTTPS lookups
           for the DNS tools.
         </li>
         <li>
-          <strong>OpenStreetMap</strong> — map tiles for IP location.
+          <strong>OpenStreetMap</strong> - map tiles for IP location.
         </li>
       </ul>
 

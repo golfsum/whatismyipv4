@@ -23,7 +23,7 @@ export default function AdUnit({
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch {
-      // AdSense not ready yet — ignored.
+      // AdSense not ready yet - ignored.
     }
   }, []);
 
@@ -32,7 +32,7 @@ export default function AdUnit({
   if (!ADSENSE_ENABLED) {
     return (
       <div className="ad ad--placeholder" aria-hidden="true">
-        <span>Ad space — add your AdSense publisher ID in lib/config.ts</span>
+        <span>Ad space - add your AdSense publisher ID in lib/config.ts</span>
       </div>
     );
   }

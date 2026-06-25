@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "What's My IP? — Internet Connection & Network Diagnostics | WhatsMyIPv4",
+      "What's My IP? - Internet Connection & Network Diagnostics | WhatsMyIPv4",
     template: "%s | WhatsMyIPv4",
   },
   description:
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "What Is My IP Address? — IPv4, IPv6, Location & VPN Check",
+    title: "What Is My IP Address? - IPv4, IPv6, Location & VPN Check",
     description:
       "Instantly find your public IP address, geolocation on a map, ISP and VPN/proxy status. Free, fast, no signup.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "What Is My IP Address? — IPv4, IPv6 & VPN Check",
+    title: "What Is My IP Address? - IPv4, IPv6 & VPN Check",
     description:
       "See your public IP, location on a map, ISP and VPN status instantly.",
   },

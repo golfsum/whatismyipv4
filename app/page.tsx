@@ -35,7 +35,7 @@ const FAQ: QA[] = [
   },
   {
     q: "How do I find my IP address on my phone?",
-    a: "Just open this page in your phone's browser — your public IP appears automatically on iPhone and Android. For your phone's private/local IP, check Settings → Wi-Fi → (your network).",
+    a: "Just open this page in your phone's browser - your public IP appears automatically on iPhone and Android. For your phone's private/local IP, check Settings → Wi-Fi → (your network).",
   },
   {
     q: "What can someone do with my IP address?",
@@ -70,7 +70,7 @@ export default function Home() {
             Instantly check your internet connection: your public{" "}
             <strong>IPv4 &amp; IPv6</strong> address, location, ISP,{" "}
             <strong>VPN status</strong>, speed and overall{" "}
-            <strong>network health</strong> — free, no signup.
+            <strong>network health</strong> - free, no signup.
           </p>
           <div className="cta-row">
             <a className="cta cta-primary" href="/speedtest">
@@ -94,7 +94,7 @@ export default function Home() {
         <section className="content" id="tools">
           <h2>Free network &amp; internet tools</h2>
           <p>
-            A complete toolkit for checking and troubleshooting your connection —
+            A complete toolkit for checking and troubleshooting your connection -
             all free and running right in your browser.
           </p>
           <ToolCards exclude="/" />
@@ -118,7 +118,7 @@ export default function Home() {
         <article className="content" id="about">
           <h2>Your IP address &amp; connection, explained</h2>
           <p>
-            Every device on the internet has an <strong>IP address</strong> — a
+            Every device on the internet has an <strong>IP address</strong> - a
             unique identifier that routes data to and from you. When you ask{" "}
             <em>&quot;what is my IP?&quot;</em> you mean your{" "}
             <strong>public IP address</strong>: the one your router shows to the

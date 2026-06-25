@@ -6,7 +6,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "IP Location — Where Is My IP Address? (Map Lookup)",
+  title: "IP Location - Where Is My IP Address? (Map Lookup)",
   description:
     "Where is my IP address located? See your IP geolocation on a map with city, region, country, ISP and timezone. Free IP location lookup, no signup.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/ip-location" },
   openGraph: {
-    title: "IP Location — Where Is My IP Address?",
+    title: "IP Location - Where Is My IP Address?",
     description:
       "See your IP geolocation on a map with city, region, country and ISP.",
     url: "/ip-location",
@@ -54,8 +54,8 @@ export default function Page() {
         <section className="hero">
           <h1>Where Is My IP Address Located?</h1>
           <p>
-            See your <strong>IP location on a map</strong> — city, region,
-            country, ISP and timezone — based on your public IP address.
+            See your <strong>IP location on a map</strong> - city, region,
+            country, ISP and timezone - based on your public IP address.
           </p>
         </section>
 

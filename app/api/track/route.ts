@@ -9,7 +9,7 @@ function firstIp(value: string | null): string {
   return value.split(",")[0]?.trim() || "";
 }
 
-// IPs (comma-separated) to exclude from analytics — set IGNORED_IPS in Vercel,
+// IPs (comma-separated) to exclude from analytics - set IGNORED_IPS in Vercel,
 // e.g. "203.0.113.7, 2001:db8::1". Your own IP shows on the home page.
 function isIgnoredIp(ip: string): boolean {
   if (!ip) return false;
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     if (body && typeof body.path === "string") path = body.path;
   } catch {
-    // No/invalid body — recordView defaults to "/".
+    // No/invalid body - recordView defaults to "/".
   }
 
   try {

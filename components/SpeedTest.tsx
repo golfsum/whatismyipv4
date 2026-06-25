@@ -57,7 +57,7 @@ const COLO_CITY: Record<string, string> = {
 };
 
 function fmt(n: number, d = 1): string {
-  return isFinite(n) && n > 0 ? n.toFixed(d) : "—";
+  return isFinite(n) && n > 0 ? n.toFixed(d) : "-";
 }
 
 export default function SpeedTest() {
@@ -104,7 +104,7 @@ export default function SpeedTest() {
     try {
       // Loaded lazily so the browser-only library never runs during SSR.
       const { default: SpeedTest } = await import("@cloudflare/speedtest");
-      // Runs entirely client-side against Cloudflare's global network — no
+      // Runs entirely client-side against Cloudflare's global network - no
       // Vercel bandwidth used. logAimApiUrl:null disables extra logging.
       const engine = new SpeedTest({
         autoStart: false,
@@ -162,7 +162,7 @@ export default function SpeedTest() {
     : phase === "done"
     ? "Test complete"
     : phase === "error"
-    ? "Something went wrong — please try again."
+    ? "Something went wrong - please try again."
     : "";
 
   return (
@@ -224,7 +224,7 @@ export default function SpeedTest() {
                 .join(", ")}
               {server.city ? ` (${server.colo})` : ""}
             </strong>{" "}
-            — the Cloudflare location closest to you, chosen automatically.
+            - the Cloudflare location closest to you, chosen automatically.
           </>
         ) : (
           <>Measurements run against Cloudflare&apos;s global network for accuracy.</>

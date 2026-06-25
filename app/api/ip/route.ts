@@ -64,7 +64,7 @@ export async function GET(req: NextRequest) {
       const data = await res.json();
       if (data && data.status === "success") geo = data;
     } catch {
-      // Swallow — we fall back to Vercel geo below.
+      // Swallow - we fall back to Vercel geo below.
     }
   }
 

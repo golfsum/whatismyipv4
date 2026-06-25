@@ -71,7 +71,7 @@ export default function NetworkHealth() {
       else if (latency < 150) {
         score += 14;
         recommendations.push(
-          "Your latency is a bit high — use a wired connection or move closer to the router for smoother calls and gaming."
+          "Your latency is a bit high - use a wired connection or move closer to the router for smoother calls and gaming."
         );
       } else {
         score += 6;
@@ -84,7 +84,7 @@ export default function NetworkHealth() {
       else {
         score += 8;
         recommendations.push(
-          "Your connection is IPv4-only. IPv6 is the modern standard — ask your ISP whether it's available."
+          "Your connection is IPv4-only. IPv6 is the modern standard - ask your ISP whether it's available."
         );
       }
 
@@ -123,7 +123,7 @@ export default function NetworkHealth() {
     <section className="health">
       <div className="health-top">
         <div className={`health-score health-score--${tone}`}>
-          <div className="health-num">{health ? score : "—"}</div>
+          <div className="health-num">{health ? score : "-"}</div>
           <div className="health-max">/100</div>
         </div>
         <div className="health-meta">

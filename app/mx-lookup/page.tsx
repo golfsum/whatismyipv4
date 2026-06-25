@@ -7,7 +7,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "MX Lookup — Check a Domain's Mail Server Records",
+  title: "MX Lookup - Check a Domain's Mail Server Records",
   description:
     "Free MX record lookup. Find the mail servers (MX records) and their priorities for any domain, instantly via DNS-over-HTTPS. No signup.",
   keywords: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "What is an MX record?",
-    a: "An MX (Mail eXchange) record tells other mail servers where to deliver email for a domain. Each MX record points to a mail server hostname and has a priority — lower numbers are tried first.",
+    a: "An MX (Mail eXchange) record tells other mail servers where to deliver email for a domain. Each MX record points to a mail server hostname and has a priority - lower numbers are tried first.",
   },
   {
     q: "What does the MX priority mean?",
@@ -77,7 +77,7 @@ export default function Page() {
             <li>That MX records exist and point to the right provider.</li>
             <li>That priorities are sensible (one clear primary).</li>
             <li>
-              That email authentication is set up — verify{" "}
+              That email authentication is set up - verify{" "}
               <a href="/spf-dmarc-lookup">SPF &amp; DMARC</a> too.
             </li>
           </ul>

@@ -6,7 +6,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Internet Speed Test — Test Download, Upload & Ping",
+  title: "Internet Speed Test - Test Download, Upload & Ping",
   description:
     "Free internet speed test. Measure your download speed, upload speed, ping and jitter in seconds, right in your browser. No app, no signup.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/speedtest" },
   openGraph: {
-    title: "Internet Speed Test — Download, Upload & Ping",
+    title: "Internet Speed Test - Download, Upload & Ping",
     description:
       "Measure your download, upload, ping and jitter in seconds, in your browser.",
     url: "/speedtest",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "How does this internet speed test work?",
-    a: "It downloads and uploads random data between your browser and our servers and measures how fast it transfers, then reports your download speed, upload speed, ping (latency) and jitter. It runs entirely in your browser — no app needed.",
+    a: "It downloads and uploads random data between your browser and our servers and measures how fast it transfers, then reports your download speed, upload speed, ping (latency) and jitter. It runs entirely in your browser - no app needed.",
   },
   {
     q: "What is a good internet speed?",
@@ -39,7 +39,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is ping and jitter?",
-    a: "Ping (latency) is how long data takes to make a round trip, in milliseconds — lower is better, especially for gaming and calls. Jitter is the variation in ping; high jitter causes stutter in video calls and online games.",
+    a: "Ping (latency) is how long data takes to make a round trip, in milliseconds - lower is better, especially for gaming and calls. Jitter is the variation in ping; high jitter causes stutter in video calls and online games.",
   },
   {
     q: "Why is my speed test result lower than my plan?",
@@ -47,7 +47,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Does the speed test use my data?",
-    a: "Yes — a single run transfers roughly 20–30 MB. On a metered or mobile connection, keep that in mind before running it repeatedly.",
+    a: "Yes - a single run transfers roughly 20–30 MB. On a metered or mobile connection, keep that in mind before running it repeatedly.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Page() {
           <h1>Internet Speed Test</h1>
           <p>
             Measure your <strong>download</strong>, <strong>upload</strong>,{" "}
-            <strong>ping</strong> and <strong>jitter</strong> in seconds —
+            <strong>ping</strong> and <strong>jitter</strong> in seconds -
             right in your browser, no app or signup required.
           </p>
         </section>
@@ -77,16 +77,16 @@ export default function Page() {
           </p>
           <ul>
             <li>
-              <strong>Download speed</strong> — how fast you receive data
+              <strong>Download speed</strong> - how fast you receive data
               (streaming, browsing, downloads). Measured in megabits per second
               (Mbps).
             </li>
             <li>
-              <strong>Upload speed</strong> — how fast you send data (video
+              <strong>Upload speed</strong> - how fast you send data (video
               calls, posting photos, backups).
             </li>
             <li>
-              <strong>Ping &amp; jitter</strong> — latency and its variation,
+              <strong>Ping &amp; jitter</strong> - latency and its variation,
               measured in milliseconds. Critical for gaming and calls.
             </li>
           </ul>
