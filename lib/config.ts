@@ -19,6 +19,10 @@ export const CONTACT_EMAIL =
 // Static "last updated" date for legal pages (update when you revise them).
 export const LEGAL_UPDATED = "June 24, 2026";
 
+// Shown on guides as the "last updated" date and used in Article schema.
+export const CONTENT_UPDATED = "June 24, 2026";
+export const CONTENT_AUTHOR = "WhatsMyIPv4 Team";
+
 // -------- Google AdSense --------
 // 1. Sign up at https://adsense.google.com and get your publisher ID.
 // 2. Replace the value below with "ca-pub-XXXXXXXXXXXXXXXX".

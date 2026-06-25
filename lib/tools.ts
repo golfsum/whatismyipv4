@@ -5,7 +5,7 @@ export interface Tool {
   href: string;
   label: string;
   desc: string;
-  category: "IP" | "Network" | "Browser" | "Privacy" | "DNS";
+  category: "IP" | "Network" | "Browser" | "Privacy" | "Security" | "DNS" | "Developer";
   live: boolean; // false = "coming soon"
 }
 
@@ -23,6 +23,7 @@ export const TOOLS: Tool[] = [
 
   // Privacy
   { href: "/vpn-check", label: "VPN Check", desc: "Is your VPN or proxy working?", category: "Privacy", live: true },
+  { href: "/proxy-check", label: "Proxy Check", desc: "Detect proxy & datacenter IPs.", category: "Privacy", live: true },
   { href: "/ip-leak-test", label: "IP Leak Test", desc: "Detect WebRTC IP leaks.", category: "Privacy", live: true },
   { href: "/hide-my-ip", label: "Hide My IP", desc: "VPN, proxy & Tor compared.", category: "Privacy", live: true },
 
@@ -30,19 +31,29 @@ export const TOOLS: Tool[] = [
   { href: "/browser-info", label: "Browser Info", desc: "What your browser reveals.", category: "Browser", live: true },
   { href: "/user-agent", label: "User Agent", desc: "View & decode your user agent.", category: "Browser", live: true },
 
+  // Security
+  { href: "/ssl-checker", label: "SSL Checker", desc: "Inspect a site's HTTPS certificate.", category: "Security", live: true },
+  { href: "/http-header-check", label: "HTTP Headers", desc: "View response & security headers.", category: "Security", live: true },
+  { href: "/security-header-analyzer", label: "Security Headers", desc: "Grade a site's security headers.", category: "Security", live: true },
+
   // DNS
   { href: "/dns-lookup", label: "DNS Lookup", desc: "A, AAAA, CNAME, NS, TXT records.", category: "DNS", live: true },
   { href: "/reverse-dns", label: "Reverse DNS", desc: "IP → hostname (PTR) lookup.", category: "DNS", live: true },
   { href: "/mx-lookup", label: "MX Lookup", desc: "Mail server (MX) records.", category: "DNS", live: true },
   { href: "/spf-dmarc-lookup", label: "SPF & DMARC", desc: "Email security TXT records.", category: "DNS", live: true },
+
+  // Developer
+  { href: "/whois-lookup", label: "WHOIS Lookup", desc: "Domain registration details.", category: "Developer", live: true },
 ];
 
 export const TOOL_CATEGORIES: Tool["category"][] = [
   "IP",
   "Network",
   "Privacy",
+  "Security",
   "Browser",
   "DNS",
+  "Developer",
 ];
 
 export const LEGAL_LINKS: { href: string; label: string }[] = [

@@ -5,7 +5,20 @@ import AdUnit from "@/components/AdUnit";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { GUIDES, getGuide } from "@/lib/guides";
-import { SITE_URL, SITE_NAME, ADSENSE_SLOT_TOP } from "@/lib/config";
+import {
+  SITE_URL,
+  SITE_NAME,
+  ADSENSE_SLOT_TOP,
+  CONTENT_UPDATED,
+  CONTENT_AUTHOR,
+} from "@/lib/config";
+
+function sectionId(h2: string): string {
+  return h2
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 
 export function generateStaticParams() {
   return GUIDES.map((g) => ({ slug: g.slug }));
@@ -60,7 +73,8 @@ export default async function GuidePage({
 
         <article className="content guide">
           <p className="guide-meta">
-            {guide.category} · {guide.readMins} min read
+            {guide.category} · {guide.readMins} min read · By {CONTENT_AUTHOR} ·
+            Updated {CONTENT_UPDATED}
           </p>
           <h1>{guide.h1}</h1>
           {guide.intro.map((p, i) => (
@@ -69,11 +83,24 @@ export default async function GuidePage({
             </p>
           ))}
 
+          {guide.sections.length > 2 && (
+            <nav className="toc" aria-label="Table of contents">
+              <span className="toc-title">On this page</span>
+              <ul>
+                {guide.sections.map((s, i) => (
+                  <li key={i}>
+                    <a href={`#${sectionId(s.h2)}`}>{s.h2}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+
           <AdUnit slot={ADSENSE_SLOT_TOP} label="Advertisement" />
 
           {guide.sections.map((s, i) => (
             <section key={i}>
-              <h2>{s.h2}</h2>
+              <h2 id={sectionId(s.h2)}>{s.h2}</h2>
               {s.body?.map((p, j) => (
                 <p key={j}>{p}</p>
               ))}
@@ -148,8 +175,9 @@ export default async function GuidePage({
             "@type": "Article",
             headline: guide.h1,
             description: guide.description,
-            author: { "@type": "Organization", name: SITE_NAME },
+            author: { "@type": "Organization", name: CONTENT_AUTHOR },
             publisher: { "@type": "Organization", name: SITE_NAME },
+            dateModified: new Date(CONTENT_UPDATED).toISOString(),
             mainEntityOfPage: `${SITE_URL}/guides/${guide.slug}`,
           }),
         }}

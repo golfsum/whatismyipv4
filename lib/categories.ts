@@ -58,7 +58,7 @@ export const CATEGORIES: Category[] = [
     overview: [
       "Every site you visit learns more about you than you'd expect, from your IP and rough location to your browser fingerprint. These tools show exactly what's visible, and the guides explain how to take back control.",
     ],
-    toolHrefs: ["/vpn-check", "/ip-leak-test", "/hide-my-ip", "/browser-info"],
+    toolHrefs: ["/vpn-check", "/proxy-check", "/ip-leak-test", "/hide-my-ip", "/browser-info"],
     guideSlugs: [
       "can-someone-find-my-location-from-my-ip",
       "what-websites-can-see-about-you",
@@ -117,7 +117,7 @@ export const CATEGORIES: Category[] = [
     overview: [
       "DNS is the internet's address book, turning names into IP addresses. These tools let you inspect any domain's records, and the guides explain how to speed up and secure your own DNS.",
     ],
-    toolHrefs: ["/dns-lookup", "/reverse-dns", "/mx-lookup", "/spf-dmarc-lookup"],
+    toolHrefs: ["/dns-lookup", "/reverse-dns", "/mx-lookup", "/spf-dmarc-lookup", "/whois-lookup"],
     guideSlugs: [
       "what-is-dns",
       "how-to-change-dns",
@@ -226,6 +226,38 @@ export const CATEGORIES: Category[] = [
       },
     ],
     related: ["networking", "privacy", "dns"],
+  },
+  {
+    slug: "security",
+    name: "Security",
+    title: "Website Security Tools",
+    description:
+      "Check a site's HTTPS certificate, response headers, and security headers, plus tools to spot proxy and datacenter traffic.",
+    overview: [
+      "These tools help you check how safely a website is set up and whether a connection looks trustworthy. They're handy for developers, site owners, and anyone curious about a site before trusting it.",
+    ],
+    toolHrefs: [
+      "/ssl-checker",
+      "/http-header-check",
+      "/security-header-analyzer",
+      "/proxy-check",
+    ],
+    guideSlugs: [
+      "what-websites-can-see-about-you",
+      "browser-fingerprinting-explained",
+      "dns-over-https",
+    ],
+    faq: [
+      {
+        q: "How do I check if a site is secure?",
+        a: "Start with the SSL checker to confirm a valid HTTPS certificate, then run the security header analyzer to see whether the site sets protective headers like HSTS and CSP.",
+      },
+      {
+        q: "What are security headers?",
+        a: "They're response headers that tell browsers to enforce protections, such as forcing HTTPS or blocking the page from being framed. More of them generally means a safer site.",
+      },
+    ],
+    related: ["privacy", "dns", "browser"],
   },
 ];
 
