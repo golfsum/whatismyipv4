@@ -2325,6 +2325,343 @@ export const GUIDES: Guide[] = [
       { href: "/ip-leak-test", label: "IP Leak Test" },
     ],
   },
+
+  // ---- VPN provider overviews (batch 5) ----------------------------------
+  {
+    slug: "nordvpn-review",
+    title: "NordVPN Review: Is It Worth It?",
+    h1: "NordVPN Overview",
+    description:
+      "An honest overview of NordVPN: its no-logs audits, speed, features and who it suits best, so you can decide if it fits your needs.",
+    category: "VPN",
+    keywords: ["nordvpn review", "is nordvpn good", "nordvpn worth it", "nordvpn"],
+    readMins: 4,
+    intro: [
+      "NordVPN is one of the largest and best-known VPNs, and it's a sensible default for most people. Here's a balanced look at what it offers so you can judge whether it's right for you.",
+    ],
+    sections: [
+      {
+        h2: "Who it's for",
+        body: [
+          "Anyone who wants a fast, reliable all-rounder without much fuss. It's a strong pick for streaming, everyday privacy, and use on public Wi-Fi.",
+        ],
+      },
+      {
+        h2: "Strengths",
+        bullets: [
+          "A large global server network for good speeds in most regions.",
+          "A no-logs policy that has been independently audited more than once.",
+          "Based in Panama, outside the major surveillance alliances.",
+          "Extras like Threat Protection, a kill switch, and Meshnet.",
+          "Around 10 simultaneous device connections.",
+        ],
+      },
+      {
+        h2: "Things to know",
+        bullets: [
+          "It sits at the mid to upper end on price, though long plans are cheaper per month.",
+          "The cheapest rates need a longer commitment.",
+          "As always, test it with the money-back window before settling in.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is NordVPN good for streaming?",
+        a: "Generally yes. It reliably works with major streaming services and has the speed for HD and 4K. Results can vary by service and server, so use the refund window to confirm it works for what you watch.",
+      },
+      {
+        q: "Does NordVPN keep logs?",
+        a: "It operates a no-logs policy that independent firms have audited. As with any provider, the audits cover a point in time, but repeated audits are a good sign.",
+      },
+    ],
+    related: ["best-vpn", "surfshark-review", "what-is-a-vpn", "how-to-test-your-vpn"],
+    affiliate: "vpn",
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+  {
+    slug: "surfshark-review",
+    title: "Surfshark Review: Best Budget VPN?",
+    h1: "Surfshark Overview",
+    description:
+      "An honest overview of Surfshark: unlimited devices, budget-friendly pricing, audited no-logs, and who it's best for.",
+    category: "VPN",
+    keywords: ["surfshark review", "is surfshark good", "surfshark worth it", "surfshark vpn"],
+    readMins: 4,
+    intro: [
+      "Surfshark made its name as a budget VPN that doesn't feel cheap. Its headline feature is unlimited simultaneous devices, which makes it great value for a household.",
+    ],
+    sections: [
+      {
+        h2: "Who it's for",
+        body: [
+          "Households and anyone watching the budget. One plan covers every device you own, which is unusual at this price.",
+        ],
+      },
+      {
+        h2: "Strengths",
+        bullets: [
+          "Unlimited simultaneous connections on a single plan.",
+          "Among the cheaper premium VPNs on longer plans.",
+          "Independently audited and based in the Netherlands.",
+          "Solid streaming support and a clean, simple app.",
+          "Useful extras like CleanWeb ad and tracker blocking.",
+        ],
+      },
+      {
+        h2: "Things to know",
+        bullets: [
+          "The lowest price needs a multi-year plan; the monthly rate is higher.",
+          "Its network is smaller than the very biggest providers.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is Surfshark really unlimited devices?",
+        a: "Yes. A single subscription lets you connect as many devices as you like at once, which is its main draw over rivals that cap connections.",
+      },
+      {
+        q: "Is Surfshark safe?",
+        a: "It runs an audited no-logs policy, offers a kill switch, and uses strong encryption. It's a legitimate, well-reviewed provider.",
+      },
+    ],
+    related: ["best-vpn", "nordvpn-review", "vpn-vs-proxy", "should-i-use-a-vpn"],
+    affiliate: "vpn",
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+  {
+    slug: "proton-vpn-review",
+    title: "Proton VPN Review: Best for Privacy?",
+    h1: "Proton VPN Overview",
+    description:
+      "An honest overview of Proton VPN: a privacy-first, Swiss-based VPN with open-source apps and a genuinely usable free tier.",
+    category: "VPN",
+    keywords: ["proton vpn review", "is proton vpn good", "protonvpn", "proton vpn free"],
+    readMins: 4,
+    intro: [
+      "Proton VPN comes from the team behind Proton Mail and leans hard into privacy. It's the pick for people who care most about transparency and trust.",
+    ],
+    sections: [
+      {
+        h2: "Who it's for",
+        body: [
+          "Privacy-focused users, and anyone who wants a trustworthy free tier with no data cap, which is rare.",
+        ],
+      },
+      {
+        h2: "Strengths",
+        bullets: [
+          "Based in Switzerland, with strong privacy laws.",
+          "Open-source apps that have been independently audited.",
+          "A free tier with unlimited data, unusual among reputable VPNs.",
+          "Secure Core routing for extra protection on sensitive traffic.",
+          "A clear, published no-logs policy.",
+        ],
+      },
+      {
+        h2: "Things to know",
+        bullets: [
+          "The free tier limits server choice and speed; paid plans unlock everything.",
+          "Streaming support is good on paid plans but not the focus.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is Proton VPN's free plan any good?",
+        a: "It's one of the few free VPNs worth using, with no data cap and no ads. It limits the servers and speed you get, but it's genuinely usable for basic privacy.",
+      },
+      {
+        q: "Is Proton VPN private?",
+        a: "Privacy is its main selling point: Swiss jurisdiction, open-source audited apps, and a no-logs policy. It's a strong choice if trust matters most.",
+      },
+    ],
+    related: ["best-vpn", "mullvad-review", "what-is-a-vpn", "vpn-vs-tor"],
+    affiliate: "vpn",
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+  {
+    slug: "expressvpn-review",
+    title: "ExpressVPN Review: Worth the Premium?",
+    h1: "ExpressVPN Overview",
+    description:
+      "An honest overview of ExpressVPN: polished apps, reliable streaming, and premium pricing. Here's who it suits.",
+    category: "VPN",
+    keywords: ["expressvpn review", "is expressvpn good", "expressvpn worth it", "express vpn"],
+    readMins: 4,
+    intro: [
+      "ExpressVPN is the polished, beginner-friendly option. It charges a premium, and in return you get apps that just work and dependable streaming.",
+    ],
+    sections: [
+      {
+        h2: "Who it's for",
+        body: [
+          "People who value ease of use and reliability over saving a few dollars, and anyone who wants streaming to work without fiddling.",
+        ],
+      },
+      {
+        h2: "Strengths",
+        bullets: [
+          "Very polished, easy apps across every platform.",
+          "Consistently reliable for streaming.",
+          "Independently audited, with a no-logs policy and its TrustedServer (RAM-only) tech.",
+          "Strong customer support.",
+        ],
+      },
+      {
+        h2: "Things to know",
+        bullets: [
+          "It's among the pricier VPNs.",
+          "Fewer simultaneous connections than budget rivals.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Why is ExpressVPN more expensive?",
+        a: "You're paying for polish, reliability, and support. If you want a VPN that simply works with minimal setup, many find the premium worth it. If price is the priority, cheaper options do the core job.",
+      },
+      {
+        q: "Is ExpressVPN good for streaming?",
+        a: "It's one of the more reliable choices for streaming across services and regions. Use the money-back window to confirm it works for what you watch.",
+      },
+    ],
+    related: ["best-vpn", "nordvpn-review", "vpn-vs-proxy", "how-to-test-your-vpn"],
+    affiliate: "vpn",
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+  {
+    slug: "mullvad-review",
+    title: "Mullvad Review: The Privacy Purist's VPN",
+    h1: "Mullvad Overview",
+    description:
+      "An honest overview of Mullvad: flat pricing, anonymous accounts, no email required, and a relentless focus on privacy.",
+    category: "VPN",
+    keywords: ["mullvad review", "is mullvad good", "mullvad vpn", "mullvad anonymous"],
+    readMins: 4,
+    intro: [
+      "Mullvad does one thing and does it well: privacy. It skips the marketing gimmicks and flashy discounts in favour of a simple, principled approach.",
+    ],
+    sections: [
+      {
+        h2: "Who it's for",
+        body: [
+          "Privacy purists who want as little of their identity tied to the account as possible, and who value honesty over streaming bells and whistles.",
+        ],
+      },
+      {
+        h2: "Strengths",
+        bullets: [
+          "Anonymous accounts: you get a random account number, with no email required.",
+          "Flat, honest pricing with no confusing tiered discounts.",
+          "Accepts cash and other private payment methods.",
+          "Open-source apps and a strong, audited privacy track record.",
+        ],
+      },
+      {
+        h2: "Things to know",
+        bullets: [
+          "Streaming is not its focus and can be hit or miss.",
+          "No long-term discount tricks, so it isn't the cheapest on multi-year deals.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is Mullvad really anonymous?",
+        a: "It's about as anonymous as VPNs get. You don't provide an email, you get a random account number, and you can even pay in cash. That minimises what's linked to you.",
+      },
+      {
+        q: "Is Mullvad good for streaming?",
+        a: "Streaming isn't its priority and results vary. If unblocking services is your main goal, a streaming-focused VPN is a better fit.",
+      },
+    ],
+    related: ["best-vpn", "proton-vpn-review", "vpn-vs-tor", "what-is-a-vpn"],
+    affiliate: "vpn",
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+
+  // ---- Networking how-to (batch 5) ---------------------------------------
+  {
+    slug: "how-to-run-traceroute",
+    title: "How to Run a Traceroute (Windows, Mac, Linux)",
+    h1: "How to Run a Traceroute",
+    description:
+      "Traceroute shows the path your data takes to a server and where it slows down. Here's how to run it on Windows, Mac and Linux, and how to read the results.",
+    category: "Networking",
+    keywords: ["how to run traceroute", "traceroute", "tracert", "traceroute command", "how to traceroute"],
+    readMins: 4,
+    intro: [
+      "Traceroute maps every hop your data passes through on the way to a server, and how long each one takes. It's the go-to tool for working out where a slow or failing connection breaks down.",
+      "It can't run in a browser because it needs low-level network access, but it's built into every operating system. Here's how to use it.",
+    ],
+    sections: [
+      {
+        h2: "Windows",
+        steps: [
+          "Press the Windows key, type cmd, and open Command Prompt.",
+          "Type: tracert example.com (replace with the site or IP you want to trace).",
+          "Press Enter and wait for the hops to list. Each line is one router along the path.",
+        ],
+      },
+      {
+        h2: "Mac",
+        steps: [
+          "Open Terminal (press Cmd + Space, type Terminal, press Enter).",
+          "Type: traceroute example.com",
+          "Press Enter and watch the hops appear.",
+        ],
+      },
+      {
+        h2: "Linux",
+        steps: [
+          "Open a terminal.",
+          "If needed, install it first, for example: sudo apt install traceroute",
+          "Run: traceroute example.com",
+        ],
+      },
+      {
+        h2: "How to read the results",
+        bullets: [
+          "Each numbered line is one hop, a router between you and the destination.",
+          "The three times are how long each test took to reach that hop, in milliseconds.",
+          "A sudden jump in time, or rows of asterisks, points to where the delay or block happens.",
+          "Asterisks alone aren't always a problem; some routers just don't reply to the probes.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Why can't I run traceroute in my browser?",
+        a: "Traceroute needs low-level network access that browsers and most web servers don't allow, for security reasons. You run it from your own computer's terminal instead, which only takes a moment.",
+      },
+      {
+        q: "What's the difference between tracert and traceroute?",
+        a: "They're the same tool with different names. Windows calls it tracert, while Mac and Linux call it traceroute. The output means the same thing.",
+      },
+    ],
+    related: ["why-is-my-internet-slow", "how-to-lower-ping", "packet-loss-explained"],
+    tools: [
+      { href: "/ping-test", label: "Ping Test" },
+      { href: "/speedtest", label: "Speed Test" },
+    ],
+  },
 ];
 
 export const GUIDE_CATEGORIES: GuideCategory[] = [

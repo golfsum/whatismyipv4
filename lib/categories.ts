@@ -25,7 +25,7 @@ export const CATEGORIES: Category[] = [
       "Networking covers everything about how your connection performs and behaves. Whether your internet feels slow, your ping is high, or you just want to understand your setup, the tools and guides here help you measure the problem and fix it.",
       "Start with a speed test for a baseline, then use the guides to interpret the numbers and improve them.",
     ],
-    toolHrefs: ["/", "/speedtest", "/subnet-calculator", "/what-is-my-router-ip"],
+    toolHrefs: ["/", "/speedtest", "/ping-test", "/port-checker", "/subnet-calculator", "/what-is-my-router-ip"],
     guideSlugs: [
       "why-is-my-internet-slow",
       "how-to-speed-up-internet",
@@ -117,7 +117,7 @@ export const CATEGORIES: Category[] = [
     overview: [
       "DNS is the internet's address book, turning names into IP addresses. These tools let you inspect any domain's records, and the guides explain how to speed up and secure your own DNS.",
     ],
-    toolHrefs: ["/dns-lookup", "/reverse-dns", "/mx-lookup", "/spf-dmarc-lookup", "/whois-lookup"],
+    toolHrefs: ["/dns-lookup", "/reverse-dns", "/mx-lookup", "/spf-dmarc-lookup", "/dns-propagation", "/whois-lookup"],
     guideSlugs: [
       "what-is-dns",
       "how-to-change-dns",

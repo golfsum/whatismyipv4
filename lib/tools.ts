@@ -19,6 +19,8 @@ export const TOOLS: Tool[] = [
 
   // Network
   { href: "/speedtest", label: "Speed Test", desc: "Download, upload, ping & jitter.", category: "Network", live: true },
+  { href: "/ping-test", label: "Ping Test", desc: "Measure latency & jitter.", category: "Network", live: true },
+  { href: "/port-checker", label: "Port Checker", desc: "Test if a TCP port is open.", category: "Network", live: true },
   { href: "/subnet-calculator", label: "Subnet Calculator", desc: "CIDR, masks, host ranges.", category: "Network", live: true },
 
   // Privacy
@@ -41,6 +43,7 @@ export const TOOLS: Tool[] = [
   { href: "/reverse-dns", label: "Reverse DNS", desc: "IP → hostname (PTR) lookup.", category: "DNS", live: true },
   { href: "/mx-lookup", label: "MX Lookup", desc: "Mail server (MX) records.", category: "DNS", live: true },
   { href: "/spf-dmarc-lookup", label: "SPF & DMARC", desc: "Email security TXT records.", category: "DNS", live: true },
+  { href: "/dns-propagation", label: "DNS Propagation", desc: "Compare records across resolvers.", category: "DNS", live: true },
 
   // Developer
   { href: "/whois-lookup", label: "WHOIS Lookup", desc: "Domain registration details.", category: "Developer", live: true },

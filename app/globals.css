@@ -1256,6 +1256,42 @@ a:hover {
   padding: 8px 16px;
   font-size: 13px;
 }
+.ping-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 90px;
+  margin: 20px 0 4px;
+}
+.ping-bar {
+  flex: 1;
+  min-width: 3px;
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  border-radius: 2px 2px 0 0;
+}
+.port-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.chip-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.chip-btn:hover {
+  border-color: var(--brand);
+  color: var(--text);
+}
+.chip-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .grade-line {
   display: flex;
   align-items: baseline;
