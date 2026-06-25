@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AdUnit from "@/components/AdUnit";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
+import FavoriteToolsGrid from "@/components/FavoriteToolsGrid";
 import { TOOLS, TOOL_CATEGORIES } from "@/lib/tools";
 import { CATEGORIES } from "@/lib/categories";
 import { ADSENSE_SLOT_TOP } from "@/lib/config";
@@ -46,23 +47,7 @@ export default function ToolsHub() {
         </section>
 
         <div className="content">
-          {TOOL_CATEGORIES.map((cat) => {
-            const items = TOOLS.filter((t) => t.category === cat);
-            if (items.length === 0) return null;
-            return (
-              <section key={cat} className="tool-cat">
-                <h2 id={cat.toLowerCase()}>{cat} tools</h2>
-                <div className="card-grid">
-                  {items.map((t) => (
-                    <a key={t.href} href={t.href} className="tool-card">
-                      <span className="tc-label">{t.label}</span>
-                      <span className="tc-desc">{t.desc}</span>
-                    </a>
-                  ))}
-                </div>
-              </section>
-            );
-          })}
+          <FavoriteToolsGrid tools={TOOLS} categories={TOOL_CATEGORIES} />
         </div>
       </main>
       <SiteFooter />

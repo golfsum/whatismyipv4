@@ -33,6 +33,7 @@ export interface Guide {
   faq: { q: string; a: string }[];
   related: string[]; // other guide slugs
   tools: { href: string; label: string }[];
+  affiliate?: "vpn" | "router"; // shows recommendation cards
 }
 
 export const GUIDES: Guide[] = [
@@ -549,6 +550,7 @@ export const GUIDES: Guide[] = [
       },
     ],
     related: ["can-someone-find-my-location-from-my-ip", "how-accurate-is-ip-geolocation", "ipv4-vs-ipv6"],
+    affiliate: "vpn",
     tools: [
       { href: "/vpn-check", label: "VPN Check" },
       { href: "/ip-leak-test", label: "IP Leak Test" },
@@ -957,6 +959,7 @@ export const GUIDES: Guide[] = [
       },
     ],
     related: ["vpn-vs-proxy", "vpn-vs-tor", "how-to-test-your-vpn", "can-someone-find-my-location-from-my-ip"],
+    affiliate: "vpn",
     tools: [
       { href: "/vpn-check", label: "VPN Check" },
       { href: "/ip-leak-test", label: "IP Leak Test" },
@@ -1266,6 +1269,7 @@ export const GUIDES: Guide[] = [
       },
     ],
     related: ["how-to-restart-your-router", "ethernet-vs-wifi", "why-is-my-internet-slow"],
+    affiliate: "router",
     tools: [
       { href: "/speedtest", label: "Speed Test" },
       { href: "/", label: "Internet Health Report" },
@@ -1581,6 +1585,7 @@ export const GUIDES: Guide[] = [
       },
     ],
     related: ["what-is-a-vpn", "vpn-vs-proxy", "vpn-vs-tor", "how-to-test-your-vpn"],
+    affiliate: "vpn",
     tools: [
       { href: "/vpn-check", label: "VPN Check" },
       { href: "/ip-leak-test", label: "IP Leak Test" },
@@ -1633,6 +1638,7 @@ export const GUIDES: Guide[] = [
       },
     ],
     related: ["vpn-vs-proxy", "what-is-a-vpn", "should-i-use-a-vpn", "can-someone-find-my-location-from-my-ip"],
+    affiliate: "vpn",
     tools: [
       { href: "/vpn-check", label: "VPN Check" },
       { href: "/ip-leak-test", label: "IP Leak Test" },
@@ -1741,6 +1747,7 @@ export const GUIDES: Guide[] = [
       },
     ],
     related: ["improve-wifi-signal", "how-to-restart-your-router", "ethernet-vs-wifi"],
+    affiliate: "router",
     tools: [
       { href: "/speedtest", label: "Speed Test" },
       { href: "/", label: "Check your connection" },
@@ -2059,6 +2066,263 @@ export const GUIDES: Guide[] = [
     tools: [
       { href: "/vpn-check", label: "VPN Check" },
       { href: "/browser-info", label: "Browser Info" },
+    ],
+  },
+
+  // ---- Router login guides (batch 4) -------------------------------------
+  {
+    slug: "192-168-1-1-login",
+    title: "192.168.1.1 Login: How to Access Your Router",
+    h1: "How to Log In to 192.168.1.1",
+    description:
+      "192.168.1.1 is the default address for many routers. Here's how to log in, the common default passwords, and what to do if the page won't load.",
+    category: "Routers",
+    keywords: ["192.168.1.1", "192.168.1.1 login", "router login", "192.168.1.1 admin"],
+    readMins: 3,
+    intro: [
+      "192.168.1.1 is one of the most common default gateway addresses. You type it into a browser to open your router's settings, where you can change the Wi-Fi name, password, and more. It's used by many brands including Linksys, ASUS, and others.",
+    ],
+    sections: [
+      {
+        h2: "How to log in",
+        steps: [
+          "Connect to the router's network by Wi-Fi or cable.",
+          "Open a browser and type 192.168.1.1 into the address bar, then press Enter.",
+          "Enter the admin username and password. Check the sticker on the router if you've never changed them.",
+          "If nothing loads, your router may use a different address (see below).",
+        ],
+      },
+      {
+        h2: "Common default logins",
+        bullets: [
+          "admin / admin",
+          "admin / password",
+          "admin / (blank)",
+          "Check the label on the router for the exact defaults.",
+        ],
+      },
+      {
+        h2: "If 192.168.1.1 won't open",
+        body: [
+          "Your router might use 192.168.0.1 or 10.0.0.1 instead. The surest way to find the right one is to check your device's default gateway. Our router IP guide shows how to do that on every platform.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What's the default password for 192.168.1.1?",
+        a: "It varies by brand, but admin/admin and admin/password are the most common. The exact defaults are usually printed on a sticker on the router itself.",
+      },
+      {
+        q: "Why can't I reach 192.168.1.1?",
+        a: "You may not be connected to that router, or it uses a different address like 192.168.0.1. Find your real gateway with our router IP guide.",
+      },
+    ],
+    related: ["192-168-0-1-login", "10-0-0-1-login", "how-to-restart-your-router"],
+    tools: [
+      { href: "/what-is-my-router-ip", label: "Find your router IP" },
+      { href: "/", label: "Check your public IP" },
+    ],
+  },
+  {
+    slug: "192-168-0-1-login",
+    title: "192.168.0.1 Login: How to Access Your Router",
+    h1: "How to Log In to 192.168.0.1",
+    description:
+      "192.168.0.1 is the default router address for TP-Link, D-Link, Netgear and others. Here's how to log in and what to do if it doesn't work.",
+    category: "Routers",
+    keywords: ["192.168.0.1", "192.168.0.1 login", "tp-link login", "192.168.0.1 admin"],
+    readMins: 3,
+    intro: [
+      "192.168.0.1 is the default gateway for many routers, especially TP-Link, D-Link, and some Netgear models. You use it to open the router's settings page from a browser.",
+    ],
+    sections: [
+      {
+        h2: "How to log in",
+        steps: [
+          "Connect to the router by Wi-Fi or an Ethernet cable.",
+          "Type 192.168.0.1 into your browser's address bar and press Enter.",
+          "Enter the admin username and password, found on the router's label if unchanged.",
+          "If the page doesn't load, your router likely uses a different address.",
+        ],
+      },
+      {
+        h2: "Common default logins",
+        bullets: ["admin / admin", "admin / password", "admin / (blank)"],
+      },
+      {
+        h2: "If 192.168.0.1 won't open",
+        body: [
+          "Try 192.168.1.1 or 10.0.0.1, or look up your device's default gateway to find the exact address. Our router IP guide walks through it for Windows, Mac, Android and iPhone.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Which routers use 192.168.0.1?",
+        a: "It's common on TP-Link and D-Link routers, and some Netgear models. If it doesn't work, your gateway is probably 192.168.1.1 or 10.0.0.1.",
+      },
+    ],
+    related: ["192-168-1-1-login", "10-0-0-1-login", "how-to-restart-your-router"],
+    tools: [
+      { href: "/what-is-my-router-ip", label: "Find your router IP" },
+      { href: "/", label: "Check your public IP" },
+    ],
+  },
+  {
+    slug: "10-0-0-1-login",
+    title: "10.0.0.1 Login: How to Access Your Router",
+    h1: "How to Log In to 10.0.0.1",
+    description:
+      "10.0.0.1 is the default gateway for Xfinity/Comcast and some Apple and ISP routers. Here's how to log in and fix it when the page won't open.",
+    category: "Routers",
+    keywords: ["10.0.0.1", "10.0.0.1 login", "xfinity router login", "comcast router login"],
+    readMins: 3,
+    intro: [
+      "10.0.0.1 is the default router address for several ISPs, most notably Xfinity and Comcast gateways, plus some Apple and business routers. You use it to reach the router's admin page.",
+    ],
+    sections: [
+      {
+        h2: "How to log in",
+        steps: [
+          "Connect to the router's Wi-Fi or plug in with Ethernet.",
+          "Enter 10.0.0.1 in your browser's address bar and press Enter.",
+          "Sign in with the admin credentials on the router's label, or your ISP app login for some gateways.",
+          "If it won't load, your gateway may be a different address.",
+        ],
+      },
+      {
+        h2: "Xfinity and Comcast note",
+        body: [
+          "On Xfinity gateways, 10.0.0.1 opens the admin page, but many settings are managed in the Xfinity app instead. The default admin login is usually admin / password unless you changed it.",
+        ],
+      },
+      {
+        h2: "If 10.0.0.1 won't open",
+        body: [
+          "Try 192.168.1.1 or 192.168.0.1, or check your device's default gateway with our router IP guide to find the exact address.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What's the default login for 10.0.0.1?",
+        a: "Often admin / password on Xfinity and Comcast gateways, but check the sticker on your device. Some ISP routers are managed through an app instead.",
+      },
+    ],
+    related: ["192-168-1-1-login", "192-168-0-1-login", "how-to-restart-your-router"],
+    tools: [
+      { href: "/what-is-my-router-ip", label: "Find your router IP" },
+      { href: "/", label: "Check your public IP" },
+    ],
+  },
+
+  // ---- Comparison + VPN (batch 4) ----------------------------------------
+  {
+    slug: "bandwidth-vs-speed",
+    title: "Bandwidth vs Speed: What's the Difference?",
+    h1: "Bandwidth vs Speed",
+    description:
+      "People use 'bandwidth' and 'speed' interchangeably, but they're not quite the same. Here's the difference and why it matters for your connection.",
+    category: "Comparisons",
+    keywords: ["bandwidth vs speed", "what is bandwidth", "bandwidth vs throughput", "internet bandwidth"],
+    readMins: 4,
+    intro: [
+      "Bandwidth and speed get mixed up all the time. They're related, but knowing the difference helps you understand why your connection sometimes feels slower than the number you pay for.",
+    ],
+    sections: [
+      {
+        h2: "Bandwidth is capacity",
+        body: [
+          "Bandwidth is the maximum amount of data your connection can carry at once, like the number of lanes on a motorway. A 500 Mbps plan has more lanes than a 100 Mbps plan. It's the ceiling, not a guarantee.",
+        ],
+      },
+      {
+        h2: "Speed is what you actually get",
+        body: [
+          "Speed, or throughput, is how much data actually moves at a given moment. It's affected by Wi-Fi, congestion, the server you're talking to, and your own device, so real speed is usually a bit below your bandwidth ceiling.",
+        ],
+      },
+      {
+        h2: "Why the gap exists",
+        bullets: [
+          "Wi-Fi loss between your device and the router.",
+          "Peak-time congestion on shared networks.",
+          "The far end: a slow server can't fill your bandwidth.",
+          "Overhead from the protocols that move the data.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does more bandwidth mean faster internet?",
+        a: "It raises the ceiling, so heavy use and multiple devices cope better. But if Wi-Fi or congestion is the bottleneck, more bandwidth alone won't feel faster.",
+      },
+      {
+        q: "What's a good amount of bandwidth?",
+        a: "For a typical household, 100 Mbps handles streaming and browsing comfortably. Bigger households that stream 4K and game at once benefit from more.",
+      },
+    ],
+    related: ["download-vs-upload-speed", "how-to-speed-up-internet", "fiber-vs-cable-internet"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Check your connection" },
+    ],
+  },
+  {
+    slug: "best-vpn",
+    title: "The Best VPNs (Honest Comparison)",
+    h1: "The Best VPNs",
+    description:
+      "A short, honest comparison of the best VPNs for privacy, streaming, and value, with what each one is actually good at.",
+    category: "VPN",
+    keywords: ["best vpn", "best vpn 2026", "top vpn", "best vpn for privacy", "best vpn for streaming"],
+    readMins: 5,
+    intro: [
+      "There's no single best VPN, only the best one for what you need. Below is how to choose, followed by the providers we'd recommend for different priorities.",
+    ],
+    sections: [
+      {
+        h2: "How to choose a VPN",
+        bullets: [
+          "No-logs policy, ideally independently audited.",
+          "A kill switch that blocks traffic if the VPN drops.",
+          "Good speeds, so streaming and calls stay smooth.",
+          "Enough simultaneous device connections for your household.",
+          "A fair price with a money-back guarantee so you can test it.",
+        ],
+      },
+      {
+        h2: "Match the VPN to your priority",
+        bullets: [
+          "Best all-rounder: fast, audited, large network.",
+          "Best value: unlimited devices on a budget plan.",
+          "Best for privacy: minimal data, anonymous signup.",
+          "Best for streaming: reliable access and polished apps.",
+        ],
+      },
+      {
+        h2: "Test it before you commit",
+        body: [
+          "Whichever you pick, install it and run our VPN check and IP leak test to confirm it hides your real IP and isn't leaking. Use the money-back window if it doesn't meet your needs.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Are paid VPNs worth it over free ones?",
+        a: "Usually yes. Free VPNs often have data caps, slower speeds, or fund themselves by logging data. A reputable paid VPN with a no-logs policy is safer and faster.",
+      },
+      {
+        q: "Will a VPN slow my connection?",
+        a: "A good one only slightly. You can measure the impact by running our speed test before and after connecting.",
+      },
+    ],
+    related: ["what-is-a-vpn", "should-i-use-a-vpn", "vpn-vs-proxy", "how-to-test-your-vpn"],
+    affiliate: "vpn",
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
     ],
   },
 ];

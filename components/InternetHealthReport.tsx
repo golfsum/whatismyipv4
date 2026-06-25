@@ -214,9 +214,20 @@ async function quickSpeed(): Promise<Pick<Metrics, "download" | "upload" | "late
   }
 }
 
+interface Snapshot {
+  overall: number;
+  download: number | null;
+  upload: number | null;
+  latency: number | null;
+  ts: number;
+}
+
 export default function InternetHealthReport() {
   const [report, setReport] = useState<Report | null>(null);
   const [failed, setFailed] = useState(false);
+  const [prev, setPrev] = useState<Snapshot | null>(null);
+  const [snap, setSnap] = useState<Snapshot | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -249,7 +260,25 @@ export default function InternetHealthReport() {
           isVpn: !!ipData?.vpn?.isVpn,
           isp: ipData?.isp ?? null,
         };
-        if (!cancelled) setReport(buildReport(m));
+        const r = buildReport(m);
+        const s: Snapshot = {
+          overall: r.overall,
+          download: m.download,
+          upload: m.upload,
+          latency: m.latency,
+          ts: Date.now(),
+        };
+        if (!cancelled) {
+          setReport(r);
+          setSnap(s);
+          try {
+            const raw = localStorage.getItem("wimi_health_last");
+            if (raw) setPrev(JSON.parse(raw) as Snapshot);
+            localStorage.setItem("wimi_health_last", JSON.stringify(s));
+          } catch {
+            /* localStorage unavailable */
+          }
+        }
       } catch {
         if (!cancelled) setFailed(true);
       }
@@ -278,6 +307,40 @@ export default function InternetHealthReport() {
       ? "Fair"
       : "Needs attention";
 
+  const fmtDelta = (n: number, unit = "") =>
+    `${n >= 0 ? "+" : ""}${Math.round(n)}${unit ? " " + unit : ""}`;
+
+  const summaryText = () => {
+    if (!report || !snap) return "";
+    return [
+      `Internet Health Report: ${report.overall}/100 (${grade})`,
+      `Download: ${snap.download != null ? snap.download.toFixed(0) + " Mbps" : "n/a"}`,
+      `Upload: ${snap.upload != null ? snap.upload.toFixed(0) + " Mbps" : "n/a"}`,
+      `Ping: ${snap.latency != null ? snap.latency.toFixed(0) + " ms" : "n/a"}`,
+      typeof window !== "undefined" ? window.location.href : "",
+    ].join("\n");
+  };
+
+  const copy = () => {
+    navigator.clipboard?.writeText(summaryText()).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1600);
+    });
+  };
+  const share = () => {
+    const nav = navigator as Navigator & {
+      share?: (d: { title: string; text: string }) => Promise<void>;
+    };
+    if (nav.share) {
+      nav.share({ title: "Internet Health Report", text: summaryText() }).catch(
+        () => {}
+      );
+    } else {
+      copy();
+    }
+  };
+  const printReport = () => window.print();
+
   return (
     <section className="report">
       <h2 className="report-title">Internet Health Report</h2>
@@ -304,6 +367,20 @@ export default function InternetHealthReport() {
               <p className="rg-cap">{report.capability}</p>
             </div>
           </div>
+
+          {prev && snap && (
+            <p className="report-delta">
+              Compared to your last check: score{" "}
+              {fmtDelta(snap.overall - prev.overall)}
+              {snap.download != null && prev.download != null
+                ? `, download ${fmtDelta(
+                    snap.download - prev.download,
+                    "Mbps"
+                  )}`
+                : ""}
+              .
+            </p>
+          )}
 
           <div className="report-cats">
             {report.categories.map((c) => (
@@ -336,6 +413,17 @@ export default function InternetHealthReport() {
             </div>
           </div>
 
+          <div className="report-actions">
+            <button className="ghost" onClick={copy}>
+              {copied ? "✓ Copied" : "Copy results"}
+            </button>
+            <button className="ghost" onClick={share}>
+              Share
+            </button>
+            <button className="ghost" onClick={printReport}>
+              Print / Save PDF
+            </button>
+          </div>
           <p className="report-cta">
             Speeds are a quick estimate.{" "}
             <a href="/speedtest">Run a full speed test →</a>

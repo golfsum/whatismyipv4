@@ -429,6 +429,138 @@ a:hover {
   white-space: nowrap;
 }
 
+/* Report actions + delta */
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.report-delta {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Favorite tools */
+.tool-card-wrap {
+  position: relative;
+}
+.fav-star {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px;
+}
+.fav-star:hover {
+  color: var(--warn);
+}
+.fav-star.on {
+  color: var(--warn);
+}
+
+/* Affiliate recommendations */
+.affiliate-disclosure {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+.aff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.aff-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.aff-tag {
+  align-self: flex-start;
+  background: rgba(79, 140, 255, 0.15);
+  color: var(--brand);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.aff-card h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+.aff-blurb {
+  font-size: 14px;
+  color: #c9d3ec;
+  margin: 0 0 12px;
+}
+.aff-specs {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+}
+.aff-specs li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+}
+.aff-spec-label {
+  color: var(--muted);
+}
+.aff-spec-value {
+  font-weight: 600;
+}
+.aff-cta {
+  margin-top: auto;
+  text-align: center;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.aff-cta:hover {
+  filter: brightness(1.08);
+  text-decoration: none;
+}
+
+/* Print / Save as PDF */
+@media print {
+  .site-header,
+  .site-footer,
+  .ad,
+  .ad--placeholder,
+  .report-actions,
+  .cta-row,
+  .breadcrumbs {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .report,
+  .card,
+  .health {
+    box-shadow: none;
+    border-color: #ccc;
+  }
+}
+
 /* Tool cards */
 .tool-cat {
   margin-top: 18px;

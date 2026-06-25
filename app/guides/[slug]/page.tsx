@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import AdUnit from "@/components/AdUnit";
+import AffiliateCards from "@/components/AffiliateCards";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { GUIDES, getGuide } from "@/lib/guides";
@@ -121,6 +122,8 @@ export default async function GuidePage({
             </section>
           ))}
         </article>
+
+        {guide.affiliate && <AffiliateCards type={guide.affiliate} />}
 
         {guide.faq.length > 0 && (
           <section className="content faq">
