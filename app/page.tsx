@@ -1,6 +1,6 @@
 import Script from "next/script";
 import IpDashboard from "@/components/IpDashboard";
-import NetworkHealth from "@/components/NetworkHealth";
+import InternetHealthReport from "@/components/InternetHealthReport";
 import ToolCards from "@/components/ToolCards";
 import AdUnit from "@/components/AdUnit";
 import Faq, { QA } from "@/components/Faq";
@@ -65,12 +65,12 @@ export default function Home() {
 
       <main className="container">
         <section className="hero">
-          <h1>What&apos;s My IP &amp; Internet Connection Check</h1>
+          <h1>What&apos;s My IP &amp; Complete Internet Diagnostics</h1>
           <p>
-            Instantly check your internet connection: your public{" "}
-            <strong>IPv4 &amp; IPv6</strong> address, location, ISP,{" "}
-            <strong>VPN status</strong>, speed and overall{" "}
-            <strong>network health</strong> - free, no signup.
+            Instantly check your public <strong>IP address</strong>, internet{" "}
+            <strong>speed</strong>, <strong>VPN status</strong>, browser
+            information, network health and privacy - all in one free report, no
+            signup.
           </p>
           <div className="cta-row">
             <a className="cta cta-primary" href="/speedtest">
@@ -87,7 +87,7 @@ export default function Home() {
 
         <IpDashboard />
 
-        <NetworkHealth />
+        <InternetHealthReport />
 
         <AdUnit slot={ADSENSE_SLOT_TOP} label="Advertisement" />
 
