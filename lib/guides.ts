@@ -1365,6 +1365,702 @@ export const GUIDES: Guide[] = [
       { href: "/", label: "Check your connection" },
     ],
   },
+
+  // ---- Speed & Networking (batch 3) --------------------------------------
+  {
+    slug: "how-to-speed-up-internet",
+    title: "How to Speed Up Your Internet (That Actually Works)",
+    h1: "How to Speed Up Your Internet",
+    description:
+      "Real fixes for slow internet, in order of impact. Free changes first, then the upgrades worth paying for. No gimmicks.",
+    category: "Speed",
+    keywords: ["how to speed up internet", "make internet faster", "increase internet speed", "fix slow internet"],
+    readMins: 5,
+    intro: [
+      "Most speed problems come down to Wi-Fi, congestion, or old hardware rather than your actual plan. Work through these in order and test after each change so you know what helped.",
+    ],
+    sections: [
+      {
+        h2: "Free fixes, in order",
+        steps: [
+          "Run a speed test on a wired device so you have a baseline to compare against.",
+          "Restart your router. It clears congestion and often picks a cleaner channel.",
+          "Move closer to the router or relocate it somewhere central and open.",
+          "Switch demanding devices to the 5 GHz band, or wire them in with Ethernet.",
+          "Pause background downloads, cloud backups, and updates while you need the speed.",
+          "Switch to a fast DNS like Cloudflare (1.1.1.1) for snappier page loads.",
+        ],
+      },
+      {
+        h2: "When the problem is your plan",
+        body: [
+          "If a wired device hits your plan's speed but it still isn't enough for your household, the fix is a faster tier, not more tweaking. Count how many people stream, game, and call at once and size your plan to that.",
+        ],
+      },
+      {
+        h2: "Upgrades worth the money",
+        bullets: [
+          "A modern Wi-Fi 6 router if yours is more than four or five years old.",
+          "A mesh system for larger homes with dead spots.",
+          "Wired Ethernet to the rooms that need rock-solid speed.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Do 'internet booster' apps work?",
+        a: "No. Apps can't increase the speed your ISP delivers. Real gains come from better Wi-Fi, less congestion, newer hardware, or a faster plan.",
+      },
+      {
+        q: "Why is my speed slower than advertised?",
+        a: "Wi-Fi loss, peak-time congestion, and your own device all eat into it. Test on a wired connection with nothing else running for a fair number.",
+      },
+    ],
+    related: ["why-is-my-internet-slow", "ethernet-vs-wifi", "improve-wifi-signal", "download-vs-upload-speed"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  {
+    slug: "what-is-jitter",
+    title: "What Is Jitter, and Why Does It Matter?",
+    h1: "What Is Jitter?",
+    description:
+      "Jitter is the wobble in your ping. Here's what causes it, why it ruins calls and games more than raw speed, and how to fix it.",
+    category: "Networking",
+    keywords: ["what is jitter", "network jitter", "high jitter fix", "jitter vs ping"],
+    readMins: 4,
+    intro: [
+      "Jitter is how much your latency varies from moment to moment. A steady 40 ms ping feels smooth, but a ping that jumps between 20 ms and 120 ms feels awful, even if the average looks fine.",
+    ],
+    sections: [
+      {
+        h2: "Why jitter matters",
+        body: [
+          "Real-time apps assume data arrives at a steady pace. When packets bunch up and then rush in, you get stutter in video calls, choppy audio, and rubber-banding in games. Jitter is often the hidden cause when your speed test looks great but calls still drop out.",
+        ],
+      },
+      {
+        h2: "What causes it",
+        bullets: [
+          "Wi-Fi interference and distance, by far the most common.",
+          "A congested connection with too much happening at once.",
+          "Old or failing networking hardware.",
+          "Routing or congestion problems on your ISP's network.",
+        ],
+      },
+      {
+        h2: "How to reduce it",
+        steps: [
+          "Switch to a wired Ethernet connection for calls and gaming.",
+          "Stop other downloads and streams while you need a steady connection.",
+          "Restart the router to clear congestion.",
+          "If it persists on a wired connection, note the times and report it to your ISP.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What's a good jitter number?",
+        a: "Under 5 ms is excellent, under 20 ms is fine for most things. Above 30 ms you'll notice problems in calls and games.",
+      },
+      {
+        q: "Is jitter the same as ping?",
+        a: "No. Ping is the delay itself. Jitter is how much that delay bounces around. Both matter, but steady ping (low jitter) is what keeps real-time apps smooth.",
+      },
+    ],
+    related: ["how-to-lower-ping", "packet-loss-explained", "ethernet-vs-wifi"],
+    tools: [
+      { href: "/speedtest", label: "Test ping & jitter" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  {
+    slug: "download-vs-upload-speed",
+    title: "Download vs Upload Speed: What's the Difference?",
+    h1: "Download vs Upload Speed",
+    description:
+      "Download and upload measure traffic in opposite directions. Here's what each one affects and how much you really need.",
+    category: "Comparisons",
+    keywords: ["download vs upload speed", "upload vs download", "what is upload speed", "difference download upload"],
+    readMins: 4,
+    intro: [
+      "Your speed test shows two numbers, and they're not the same thing. Download is data coming to you. Upload is data going out. Most home plans give you far more of the first than the second.",
+    ],
+    sections: [
+      {
+        h2: "What download speed affects",
+        bullets: [
+          "Streaming video and music.",
+          "Loading websites and downloading files.",
+          "Receiving game updates.",
+        ],
+      },
+      {
+        h2: "What upload speed affects",
+        bullets: [
+          "Video calls, where your camera feed goes out.",
+          "Posting photos and videos, and cloud backups.",
+          "Online gaming, where your inputs are sent to the server.",
+          "Hosting or screen sharing.",
+        ],
+      },
+      {
+        h2: "How much do you need?",
+        body: [
+          "For a typical household, 100 Mbps download covers streaming and browsing comfortably. Upload is where cable plans fall short. Aim for at least 10 Mbps upload if you video call or upload often. Fiber usually gives equal upload and download, which is why it feels smoother for remote work.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Why is my upload so much slower than download?",
+        a: "Cable and DSL plans are deliberately asymmetric because most people download more than they upload. Fiber is usually symmetrical, with matching upload and download.",
+      },
+      {
+        q: "Does upload speed affect gaming?",
+        a: "Yes, a bit. Your inputs are uploaded constantly. You don't need much, but very low or congested upload can add lag.",
+      },
+    ],
+    related: ["fiber-vs-cable-internet", "how-to-speed-up-internet", "what-is-jitter"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Check your connection" },
+    ],
+  },
+
+  // ---- VPN (batch 3) ------------------------------------------------------
+  {
+    slug: "should-i-use-a-vpn",
+    title: "Should I Use a VPN? An Honest Answer",
+    h1: "Should You Use a VPN?",
+    description:
+      "VPNs are useful but oversold. Here's when a VPN genuinely helps, when it doesn't, and how to decide if it's worth it for you.",
+    category: "VPN",
+    keywords: ["should i use a vpn", "do i need a vpn", "is a vpn worth it", "vpn benefits"],
+    readMins: 5,
+    intro: [
+      "A VPN is a genuinely useful tool, but the ads make it sound like a cure-all. Whether you need one depends entirely on what you're trying to do.",
+    ],
+    sections: [
+      {
+        h2: "When a VPN is worth it",
+        bullets: [
+          "You use public Wi-Fi often, like at cafes, hotels, or airports.",
+          "You want to keep your browsing private from your internet provider.",
+          "You need to appear in another country, for travel or content access.",
+          "You're on a network that blocks or monitors sites you need.",
+        ],
+      },
+      {
+        h2: "When it matters less",
+        bullets: [
+          "Browsing at home on your own trusted network.",
+          "Sites you log into already know who you are.",
+          "Banking apps, which are already encrypted end to end.",
+        ],
+      },
+      {
+        h2: "How to choose one",
+        body: [
+          "If you decide to use a VPN, pick a paid provider with a clear no-logs policy, a kill switch, and good independent reviews. Avoid sketchy free VPNs, which sometimes fund themselves by logging or selling your data. After installing, run our VPN check and IP leak test to confirm it's working.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does a VPN make me anonymous?",
+        a: "No. It hides your IP and encrypts traffic, but logins, cookies, and fingerprinting still identify you. It's privacy, not invisibility.",
+      },
+      {
+        q: "Is it legal to use a VPN?",
+        a: "In most countries, yes. A few restrict or ban them. Check your local laws if you're unsure, especially when travelling.",
+      },
+    ],
+    related: ["what-is-a-vpn", "vpn-vs-proxy", "vpn-vs-tor", "how-to-test-your-vpn"],
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+
+  {
+    slug: "vpn-vs-tor",
+    title: "VPN vs Tor: Which Is More Private?",
+    h1: "VPN vs Tor",
+    description:
+      "VPNs and Tor both hide your IP, but they make very different trade-offs between speed and anonymity. Here's how to choose.",
+    category: "Comparisons",
+    keywords: ["vpn vs tor", "tor vs vpn", "is tor safer than a vpn", "tor browser"],
+    readMins: 5,
+    intro: [
+      "Both a VPN and Tor hide your real IP, but they're built for different goals. A VPN is fast and convenient. Tor is slower but far harder to trace.",
+    ],
+    sections: [
+      {
+        h2: "How they work",
+        bullets: [
+          "A VPN routes your traffic through one server run by a company you have to trust.",
+          "Tor bounces your traffic through three random volunteer relays, and no single relay knows both who you are and where you're going.",
+        ],
+      },
+      {
+        h2: "Speed and convenience",
+        body: [
+          "A good VPN is fast enough for streaming and calls and covers your whole device. Tor is noticeably slow because of all the relaying, and it's best used through the Tor Browser for specific privacy-sensitive tasks rather than everyday use.",
+        ],
+      },
+      {
+        h2: "Which should you use?",
+        bullets: [
+          "Choose a VPN for everyday privacy, public Wi-Fi, and streaming.",
+          "Choose Tor when strong anonymity matters more than speed.",
+          "Both are free or cheap. Tor is free, while a trustworthy VPN is usually paid.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is Tor safer than a VPN?",
+        a: "For anonymity, generally yes, because no single party sees the whole picture. But it's much slower, and you still need good browsing habits since Tor alone doesn't hide everything.",
+      },
+      {
+        q: "Can I use both together?",
+        a: "Yes, some people run Tor over a VPN for extra separation. It's slower still and only worth it for specific threat models.",
+      },
+    ],
+    related: ["vpn-vs-proxy", "what-is-a-vpn", "should-i-use-a-vpn", "can-someone-find-my-location-from-my-ip"],
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+
+  // ---- DNS (batch 3) ------------------------------------------------------
+  {
+    slug: "dns-over-https",
+    title: "What Is DNS over HTTPS (DoH)?",
+    h1: "What Is DNS over HTTPS?",
+    description:
+      "DNS over HTTPS encrypts your DNS lookups so nobody can snoop on or tamper with the sites you visit. Here's how it works and how to turn it on.",
+    category: "DNS",
+    keywords: ["dns over https", "doh", "encrypted dns", "secure dns"],
+    readMins: 4,
+    intro: [
+      "Normal DNS lookups travel in plain text, so your ISP or anyone on the network can see every domain you request. DNS over HTTPS, or DoH, wraps those lookups in encryption so they're private.",
+    ],
+    sections: [
+      {
+        h2: "Why it matters",
+        bullets: [
+          "Privacy: your ISP and network can no longer read your DNS requests.",
+          "Security: it's much harder for an attacker to redirect you with forged DNS answers.",
+          "Integrity: it helps prevent tampering on untrusted networks.",
+        ],
+      },
+      {
+        h2: "How to turn it on",
+        steps: [
+          "In Chrome or Edge, open Settings, then Privacy and security, then Security, and enable 'Use secure DNS'.",
+          "In Firefox, open Settings, scroll to Network Settings, and enable DNS over HTTPS.",
+          "On Android, set Private DNS to one.one.one.one (Cloudflare) under Network settings.",
+          "Pick a provider that supports DoH, such as Cloudflare or Google.",
+        ],
+      },
+      {
+        h2: "DoH vs DoT",
+        body: [
+          "DNS over TLS (DoT) does the same job but on its own dedicated port, which makes it easier for networks to block or manage. DoH blends in with normal web traffic. For most people, either is a solid upgrade over plain DNS.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does DoH slow things down?",
+        a: "Barely. The encryption overhead is tiny, and a good resolver keeps lookups fast.",
+      },
+      {
+        q: "Is DoH enough for privacy?",
+        a: "It hides your DNS lookups, which is a real win, but the sites you connect to can still see your IP. Pair it with a VPN if you want to hide that too.",
+      },
+    ],
+    related: ["what-is-dns", "best-dns-servers", "how-to-change-dns", "google-dns-vs-cloudflare-dns"],
+    tools: [
+      { href: "/dns-lookup", label: "DNS Lookup" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  // ---- Routers (batch 3) --------------------------------------------------
+  {
+    slug: "mesh-wifi-explained",
+    title: "Mesh WiFi Explained: Is It Worth It?",
+    h1: "Mesh Wi-Fi Explained",
+    description:
+      "Mesh Wi-Fi uses several units to blanket your home in signal. Here's how it works, how it differs from extenders, and whether you need it.",
+    category: "Routers",
+    keywords: ["mesh wifi explained", "what is mesh wifi", "mesh vs extender", "is mesh wifi worth it"],
+    readMins: 4,
+    intro: [
+      "A single router struggles to cover a large or oddly shaped home. Mesh Wi-Fi solves that with several units that work together as one network, so you keep a strong signal as you move around.",
+    ],
+    sections: [
+      {
+        h2: "How mesh works",
+        body: [
+          "You place a main unit by your modem and one or more satellites around the house. They share one Wi-Fi name, and your devices hand off between them automatically as you move, with no dropouts or switching networks.",
+        ],
+      },
+      {
+        h2: "Mesh vs a Wi-Fi extender",
+        bullets: [
+          "An extender rebroadcasts the signal and often halves the speed at the extender, usually on a separate network name.",
+          "Mesh keeps one seamless network and manages the handoff for you, with much better speeds in far rooms.",
+        ],
+      },
+      {
+        h2: "Do you need it?",
+        bullets: [
+          "Worth it: large homes, multiple floors, or persistent dead spots.",
+          "Probably not: a small flat where one router already reaches everywhere.",
+          "Alternative: a wired Ethernet run to a distant room can beat any wireless option.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is mesh Wi-Fi faster?",
+        a: "Not at the router itself, but far rooms get much better speed because they're closer to a mesh unit instead of straining to reach a single distant router.",
+      },
+      {
+        q: "Can I add mesh to my existing router?",
+        a: "Usually you replace the router with the mesh system, or run the mesh in 'access point' mode behind it. Mixing brands rarely works well, so buy a matched set.",
+      },
+    ],
+    related: ["improve-wifi-signal", "how-to-restart-your-router", "ethernet-vs-wifi"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Check your connection" },
+    ],
+  },
+
+  // ---- Gaming (batch 3) ---------------------------------------------------
+  {
+    slug: "reduce-gaming-lag",
+    title: "How to Reduce Gaming Lag",
+    h1: "How to Reduce Gaming Lag",
+    description:
+      "Lag comes from latency, jitter, and packet loss, not low download speed. Here's the order of fixes that actually makes online games feel sharp.",
+    category: "Gaming",
+    keywords: ["reduce gaming lag", "fix lag", "how to stop lagging", "gaming lag fix"],
+    readMins: 5,
+    intro: [
+      "Lag is rarely about your download speed. It's about latency, jitter, and packet loss. The good news is that the biggest fixes are free and take a few minutes.",
+    ],
+    sections: [
+      {
+        h2: "Do these first",
+        steps: [
+          "Plug in. A wired Ethernet connection is the single biggest fix for lag.",
+          "Pick the closest game server or region.",
+          "Stop downloads and ask others to pause streaming while you play.",
+          "Restart your router to clear congestion.",
+          "Turn on QoS in your router and prioritise your gaming device if it supports it.",
+          "Close background apps that sync or update.",
+        ],
+      },
+      {
+        h2: "If lag continues",
+        bullets: [
+          "Test for packet loss, which causes the worst rubber-banding.",
+          "Try a gaming-friendly DNS, though it helps menus more than in-match ping.",
+          "If only certain games or servers lag, the problem may be their routing, not yours.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Will a faster internet plan fix my lag?",
+        a: "Usually not. More bandwidth helps downloads, not latency. Wiring in and cutting congestion does far more for lag.",
+      },
+      {
+        q: "Does a VPN reduce lag?",
+        a: "Rarely. It usually adds a hop and raises ping. The exception is when your ISP routes traffic poorly and a VPN happens to take a better path.",
+      },
+    ],
+    related: ["how-to-lower-ping", "best-dns-for-gaming", "ethernet-vs-wifi", "packet-loss-explained"],
+    tools: [
+      { href: "/speedtest", label: "Test ping & jitter" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  {
+    slug: "best-dns-for-gaming",
+    title: "The Best DNS for Gaming",
+    h1: "The Best DNS for Gaming",
+    description:
+      "DNS won't lower your in-match ping, but the right one speeds up menus and matchmaking. Here are the best options and how to set them.",
+    category: "Gaming",
+    keywords: ["best dns for gaming", "gaming dns", "fastest dns for gaming", "dns for ps5 xbox"],
+    readMins: 4,
+    intro: [
+      "Let's set expectations: DNS doesn't change your ping inside a match, because that's decided by your route to the game server. What a fast DNS does help with is menus, store pages, matchmaking, and patch downloads.",
+    ],
+    sections: [
+      {
+        h2: "Top picks",
+        bullets: [
+          "Cloudflare, 1.1.1.1 and 1.0.0.1. Fast and private.",
+          "Google, 8.8.8.8 and 8.8.4.4. Reliable everywhere.",
+          "Both are free and easy to set on a console or router.",
+        ],
+      },
+      {
+        h2: "How to set it on a console",
+        steps: [
+          "On PlayStation: Settings, Network, Set Up Internet Connection, Custom, then set DNS to Manual and enter 1.1.1.1 and 1.0.0.1.",
+          "On Xbox: Settings, Network, Advanced settings, DNS settings, Manual, then enter the same addresses.",
+          "Or set it once on your router to cover every device in the house.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does changing DNS lower my ping?",
+        a: "Not your in-game ping. It speeds up name lookups, so menus and matchmaking feel quicker, but the route to the game server sets your actual latency.",
+      },
+      {
+        q: "What actually lowers gaming ping?",
+        a: "A wired connection, choosing the closest server, and cutting network congestion. See our guides on lowering ping and reducing lag.",
+      },
+    ],
+    related: ["reduce-gaming-lag", "how-to-lower-ping", "best-dns-servers", "how-to-change-dns"],
+    tools: [
+      { href: "/dns-lookup", label: "DNS Lookup" },
+      { href: "/speedtest", label: "Speed Test" },
+    ],
+  },
+
+  // ---- Browser & Privacy (batch 3) ---------------------------------------
+  {
+    slug: "browser-fingerprinting-explained",
+    title: "Browser Fingerprinting Explained",
+    h1: "What Is Browser Fingerprinting?",
+    description:
+      "Sites can identify you without cookies by combining dozens of browser details into a 'fingerprint'. Here's how it works and how to fight it.",
+    category: "Privacy",
+    keywords: ["browser fingerprinting", "what is fingerprinting", "device fingerprint", "stop fingerprinting"],
+    readMins: 5,
+    intro: [
+      "Even with cookies blocked and a VPN on, a website can often recognise you again. It does this by combining many small, public details about your browser into a single, surprisingly unique fingerprint.",
+    ],
+    sections: [
+      {
+        h2: "What goes into a fingerprint",
+        bullets: [
+          "Your browser, version, and operating system.",
+          "Screen size, color depth, and time zone.",
+          "Installed fonts and language settings.",
+          "Graphics rendering quirks and device details.",
+        ],
+      },
+      {
+        h2: "Why it's powerful",
+        body: [
+          "No single detail identifies you, but the combination often does. Because these signals are part of normal browsing, blocking cookies or hiding your IP doesn't remove them. That's why a VPN alone isn't full privacy.",
+        ],
+      },
+      {
+        h2: "How to reduce your fingerprint",
+        bullets: [
+          "Use a privacy-focused browser with anti-fingerprinting built in, like Firefox or the Tor Browser.",
+          "Keep your browser updated and limit unusual extensions, which make you stand out.",
+          "Avoid tweaking too many settings, since a very unusual setup is easier to track.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does a VPN stop fingerprinting?",
+        a: "No. A VPN hides your IP but not your browser details. Anti-fingerprinting needs browser-level protection.",
+      },
+      {
+        q: "Can I see my own fingerprint?",
+        a: "You can see most of the inputs to it with our Browser Info tool, which shows exactly what your browser reveals.",
+      },
+    ],
+    related: ["what-websites-can-see-about-you", "cookies-explained", "incognito-mode-explained"],
+    tools: [
+      { href: "/browser-info", label: "Browser Info" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+
+  {
+    slug: "what-websites-can-see-about-you",
+    title: "What Websites Can See About You",
+    h1: "What Can Websites See About You?",
+    description:
+      "Every site you visit learns more than you might think. Here's exactly what's visible, what isn't, and how to share less.",
+    category: "Privacy",
+    keywords: ["what websites can see about you", "what data do websites collect", "what can sites see", "online privacy"],
+    readMins: 5,
+    intro: [
+      "Open any website and it immediately learns a fair amount about you, all from normal browser behaviour. None of it includes your name on its own, but together it paints a detailed picture.",
+    ],
+    sections: [
+      {
+        h2: "What they can see",
+        bullets: [
+          "Your IP address, which gives a rough location and your ISP.",
+          "Your browser, version, operating system, and device type.",
+          "Your screen size, language, and time zone.",
+          "The page that referred you, and how you move through the site.",
+          "Enough combined detail to fingerprint and recognise you.",
+        ],
+      },
+      {
+        h2: "What they cannot see",
+        bullets: [
+          "Your name or exact home address, unless you give it.",
+          "Files on your device or other tabs you have open.",
+          "Your passwords for other sites.",
+        ],
+      },
+      {
+        h2: "How to share less",
+        bullets: [
+          "Use a VPN to hide your IP and location.",
+          "Use a privacy browser and block third-party cookies.",
+          "Check what you're exposing with our Browser Info and IP leak tools.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Can a website see my exact location?",
+        a: "Not from your IP, which is only city-level at best. A site can ask for precise GPS location, but your browser prompts you first and you can say no.",
+      },
+      {
+        q: "Does incognito mode hide me from websites?",
+        a: "No. Incognito only stops your own browser from saving history. Sites still see your IP and browser details. See our incognito guide.",
+      },
+    ],
+    related: ["browser-fingerprinting-explained", "cookies-explained", "can-someone-find-my-location-from-my-ip"],
+    tools: [
+      { href: "/browser-info", label: "Browser Info" },
+      { href: "/", label: "Check your IP" },
+    ],
+  },
+
+  {
+    slug: "cookies-explained",
+    title: "Cookies Explained (Without the Jargon)",
+    h1: "What Are Cookies?",
+    description:
+      "Cookies keep you logged in but also track you across the web. Here's the plain-English difference between the good and the creepy kind.",
+    category: "Privacy",
+    keywords: ["what are cookies", "cookies explained", "first party vs third party cookies", "tracking cookies"],
+    readMins: 4,
+    intro: [
+      "Cookies are tiny files a website stores in your browser to remember things. Some are genuinely helpful. Others exist mainly to follow you around the web.",
+    ],
+    sections: [
+      {
+        h2: "The useful kind",
+        body: [
+          "First-party cookies are set by the site you're actually on. They keep you logged in, remember your cart, and save your preferences. Without them, the web would be far more annoying.",
+        ],
+      },
+      {
+        h2: "The tracking kind",
+        body: [
+          "Third-party cookies are set by other companies embedded in a page, like ad networks. They follow you from site to site to build a profile for advertising. These are the ones privacy tools and browsers increasingly block.",
+        ],
+      },
+      {
+        h2: "How to control them",
+        bullets: [
+          "Block third-party cookies in your browser settings. Most browsers now do this by default.",
+          "Clear cookies periodically to reset tracking.",
+          "Use a privacy browser or extension for stronger control.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Will blocking cookies break websites?",
+        a: "Blocking third-party cookies is safe and rarely causes problems. Blocking all cookies, including first-party, will log you out everywhere and break carts and preferences.",
+      },
+      {
+        q: "Do cookies track me even with a VPN?",
+        a: "Yes. A VPN hides your IP, but cookies live in your browser and keep working regardless. Block third-party cookies to limit them.",
+      },
+    ],
+    related: ["what-websites-can-see-about-you", "browser-fingerprinting-explained", "incognito-mode-explained"],
+    tools: [
+      { href: "/browser-info", label: "Browser Info" },
+      { href: "/vpn-check", label: "VPN Check" },
+    ],
+  },
+
+  {
+    slug: "incognito-mode-explained",
+    title: "What Incognito Mode Actually Does",
+    h1: "What Incognito Mode Really Does",
+    description:
+      "Incognito mode is more limited than most people think. Here's what private browsing actually hides, and what it definitely doesn't.",
+    category: "Privacy",
+    keywords: ["incognito mode", "private browsing", "does incognito hide my ip", "incognito myths"],
+    readMins: 4,
+    intro: [
+      "Incognito or private mode is handy, but it protects you from less than its name suggests. It mostly keeps your browsing off your own device, not off the internet.",
+    ],
+    sections: [
+      {
+        h2: "What it does",
+        bullets: [
+          "Doesn't save your history, cookies, or form data after you close the window.",
+          "Starts you logged out, which is handy for shared computers.",
+          "Lets you sign into a second account alongside your normal one.",
+        ],
+      },
+      {
+        h2: "What it does not do",
+        bullets: [
+          "It doesn't hide your IP address. Websites still see it.",
+          "It doesn't hide your activity from your ISP, employer, or school.",
+          "It doesn't stop fingerprinting or block ads and trackers.",
+          "It doesn't make you anonymous.",
+        ],
+      },
+      {
+        h2: "If you want real privacy",
+        body: [
+          "Combine a VPN to hide your IP, a privacy-focused browser to limit tracking, and good habits. Incognito is a convenience feature, not a privacy shield.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does incognito hide my IP?",
+        a: "No. Your IP is fully visible to every site you open in incognito. Use a VPN if you want to hide it.",
+      },
+      {
+        q: "Can my ISP see incognito browsing?",
+        a: "Yes. Incognito only affects what your own browser stores. Your ISP can still see the sites you visit unless you use a VPN or encrypted DNS.",
+      },
+    ],
+    related: ["what-websites-can-see-about-you", "browser-fingerprinting-explained", "cookies-explained", "what-is-a-vpn"],
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/browser-info", label: "Browser Info" },
+    ],
+  },
 ];
 
 export const GUIDE_CATEGORIES: GuideCategory[] = [

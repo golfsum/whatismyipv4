@@ -1,11 +1,12 @@
 import { SITE_NAME } from "@/lib/config";
 import { TOOLS, LEGAL_LINKS, TOOL_CATEGORIES } from "@/lib/tools";
+import { CATEGORIES } from "@/lib/categories";
 
 // Curated top-nav (most popular tools).
 const NAV = [
+  { href: "/tools", label: "Tools" },
   { href: "/speedtest", label: "Speed Test" },
   { href: "/vpn-check", label: "VPN Check" },
-  { href: "/dns-lookup", label: "DNS Tools" },
   { href: "/guides", label: "Guides" },
   { href: "/about", label: "About" },
 ];
@@ -45,8 +46,17 @@ export function SiteFooter() {
             </div>
           ))}
           <div className="footer-col">
+            <h4>Topics</h4>
+            {CATEGORIES.map((c) => (
+              <a key={c.slug} href={`/category/${c.slug}`}>
+                {c.name}
+              </a>
+            ))}
+          </div>
+          <div className="footer-col">
             <h4>Site</h4>
-            <a href="/guides">Guides</a>
+            <a href="/tools">All Tools</a>
+            <a href="/guides">All Guides</a>
             {LEGAL_LINKS.map((l) => (
               <a key={l.href} href={l.href}>
                 {l.label}

@@ -79,7 +79,7 @@ export default function Home() {
             <a className="cta" href="/vpn-check">
               VPN Check
             </a>
-            <a className="cta" href="#tools">
+            <a className="cta" href="/tools">
               All Tools
             </a>
           </div>

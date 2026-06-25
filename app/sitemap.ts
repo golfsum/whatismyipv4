@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/config";
 import { TOOLS, LEGAL_LINKS } from "@/lib/tools";
 import { GUIDES } from "@/lib/guides";
+import { CATEGORIES } from "@/lib/categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -11,8 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     new Set([
       ...TOOLS.map((t) => t.href),
       ...LEGAL_LINKS.map((l) => l.href),
+      "/tools",
       "/guides",
       ...GUIDES.map((g) => `/guides/${g.slug}`),
+      ...CATEGORIES.map((c) => `/category/${c.slug}`),
     ])
   );
 
