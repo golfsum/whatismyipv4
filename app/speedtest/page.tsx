@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "How does this internet speed test work?",
-    a: "It downloads and uploads random data between your browser and our servers and measures how fast it transfers, then reports your download speed, upload speed, ping (latency) and jitter. It runs entirely in your browser - no app needed.",
+    a: "It downloads and uploads random data between your browser and Cloudflare's global network, measures how fast it moves, then reports your download speed, upload speed, ping (latency) and jitter. Everything runs in your browser, with no app needed.",
   },
   {
     q: "What is a good internet speed?",
@@ -39,7 +39,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is ping and jitter?",
-    a: "Ping (latency) is how long data takes to make a round trip, in milliseconds - lower is better, especially for gaming and calls. Jitter is the variation in ping; high jitter causes stutter in video calls and online games.",
+    a: "Ping (latency) is how long data takes to make a round trip, measured in milliseconds, and lower is better, especially for gaming and calls. Jitter is how much that ping varies. High jitter causes stutter in video calls and online games.",
   },
   {
     q: "Why is my speed test result lower than my plan?",
@@ -47,7 +47,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Does the speed test use my data?",
-    a: "Yes - a single run transfers roughly 20–30 MB. On a metered or mobile connection, keep that in mind before running it repeatedly.",
+    a: "Yes. A single run transfers roughly 20 to 30 MB. On a metered or mobile connection, keep that in mind before running it repeatedly.",
   },
 ];
 
@@ -77,16 +77,16 @@ export default function Page() {
           </p>
           <ul>
             <li>
-              <strong>Download speed</strong> - how fast you receive data
+              <strong>Download speed</strong>: how fast you receive data
               (streaming, browsing, downloads). Measured in megabits per second
               (Mbps).
             </li>
             <li>
-              <strong>Upload speed</strong> - how fast you send data (video
+              <strong>Upload speed</strong>: how fast you send data (video
               calls, posting photos, backups).
             </li>
             <li>
-              <strong>Ping &amp; jitter</strong> - latency and its variation,
+              <strong>Ping &amp; jitter</strong>: latency and its variation,
               measured in milliseconds. Critical for gaming and calls.
             </li>
           </ul>

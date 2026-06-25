@@ -43,7 +43,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is a DNS or IP leak?",
-    a: "A leak happens when some of your traffic bypasses the VPN tunnel, exposing your real IP or DNS provider. If the IP shown here is your real one while your VPN is connected, you may have a leak - try reconnecting or enabling your VPN's kill switch.",
+    a: "A leak happens when some of your traffic slips past the VPN tunnel, exposing your real IP or DNS provider. If the IP shown here is your real one while your VPN is connected, you probably have a leak, so try reconnecting or turning on your VPN's kill switch.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function Page() {
           <ol>
             <li>
               <strong>Turn your VPN off</strong> and note the IP and city shown
-              above - that&apos;s your real connection.
+              above. That&apos;s your real connection.
             </li>
             <li>
               <strong>Connect your VPN</strong> and reload this page.
@@ -89,7 +89,7 @@ export default function Page() {
             traffic is going through a VPN. A normal home or mobile connection
             reports <strong>&quot;No VPN detected&quot;</strong>. Note that some
             privacy-focused VPNs use residential-looking IPs and can slip past
-            detection - a non-detection is not proof your VPN is off.
+            detection, and a non-detection is not proof your VPN is off.
           </p>
 
           <h2>Why use a VPN?</h2>

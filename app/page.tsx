@@ -31,11 +31,11 @@ const FAQ: QA[] = [
   },
   {
     q: "What is a good Network Health Score?",
-    a: "The score combines latency, IPv6 support, DNS resolution and a secure connection. 85+ is excellent, 70–84 is good, 50–69 is fair. If yours is low, the recommendations below the score tell you what to improve.",
+    a: "The score blends your latency, IPv6 support, DNS resolution and whether you're on a secure connection. Anything above 85 is excellent, the 70s are good, and the 50s and 60s are fair. If yours comes back low, the suggestions under the score tell you what to fix.",
   },
   {
     q: "How do I find my IP address on my phone?",
-    a: "Just open this page in your phone's browser - your public IP appears automatically on iPhone and Android. For your phone's private/local IP, check Settings → Wi-Fi → (your network).",
+    a: "Open this page in your phone's browser and your public IP shows up automatically, on both iPhone and Android. If you need your phone's private (local) IP instead, check Settings, then Wi-Fi, then tap your network.",
   },
   {
     q: "What can someone do with my IP address?",
@@ -67,10 +67,10 @@ export default function Home() {
         <section className="hero">
           <h1>What&apos;s My IP &amp; Complete Internet Diagnostics</h1>
           <p>
-            Instantly check your public <strong>IP address</strong>, internet{" "}
-            <strong>speed</strong>, <strong>VPN status</strong>, browser
-            information, network health and privacy - all in one free report, no
-            signup.
+            See your public <strong>IP address</strong>, internet{" "}
+            <strong>speed</strong>, <strong>VPN status</strong>, browser details
+            and network health in one place. It&apos;s free, and there&apos;s
+            nothing to sign up for.
           </p>
           <div className="cta-row">
             <a className="cta cta-primary" href="/speedtest">
@@ -94,8 +94,8 @@ export default function Home() {
         <section className="content" id="tools">
           <h2>Free network &amp; internet tools</h2>
           <p>
-            A complete toolkit for checking and troubleshooting your connection -
-            all free and running right in your browser.
+            Everything you need to check and troubleshoot your connection. Every
+            tool is free and runs right in your browser.
           </p>
           <ToolCards exclude="/" />
         </section>
@@ -118,12 +118,12 @@ export default function Home() {
         <article className="content" id="about">
           <h2>Your IP address &amp; connection, explained</h2>
           <p>
-            Every device on the internet has an <strong>IP address</strong> - a
-            unique identifier that routes data to and from you. When you ask{" "}
-            <em>&quot;what is my IP?&quot;</em> you mean your{" "}
+            Every device on the internet has an <strong>IP address</strong>, the
+            number that lets data find its way to and from you. When people ask{" "}
+            <em>&quot;what is my IP?&quot;</em> they usually mean their{" "}
             <strong>public IP address</strong>: the one your router shows to the
-            world, displayed at the top of this page along with your location, ISP
-            and VPN status.
+            outside world. That&apos;s what you see at the top of this page, along
+            with your location, ISP and VPN status.
           </p>
           <h3>IPv4 vs IPv6</h3>
           <p>
@@ -144,6 +144,21 @@ export default function Home() {
             <a href="/subnet-calculator">subnet calculator</a>.
           </p>
         </article>
+
+        <section className="content">
+          <h2>Popular guides</h2>
+          <p>
+            Sort out a connection problem or just learn how this stuff works.
+          </p>
+          <ul className="link-list">
+            <li><a href="/guides/why-is-my-internet-slow">Why is my internet slow?</a></li>
+            <li><a href="/guides/how-to-lower-ping">How to lower your ping</a></li>
+            <li><a href="/guides/can-someone-find-my-location-from-my-ip">Can someone find your address from your IP?</a></li>
+            <li><a href="/guides/ipv4-vs-ipv6">IPv4 vs IPv6</a></li>
+            <li><a href="/guides/vpn-vs-proxy">VPN vs proxy</a></li>
+            <li><a href="/guides">Browse all guides →</a></li>
+          </ul>
+        </section>
 
         <Faq items={FAQ} />
       </main>

@@ -9,7 +9,7 @@ import { ADSENSE_SLOT_TOP } from "@/lib/config";
 export const metadata: Metadata = {
   title: "What Is My User Agent? - View & Decode Your UA String",
   description:
-    "See your browser's user agent string and what it means - browser, version, engine, operating system and device. Free user agent checker, copy with one click.",
+    "See your browser's user agent string and what it means: browser, version, engine, operating system and device. Free user agent checker, copy with one click.",
   keywords: [
     "what is my user agent",
     "my user agent",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "What is a user agent?",
-    a: "A user agent is a text string your browser sends with every request to identify itself - including the browser name and version, rendering engine, and operating system. Servers use it to deliver compatible content.",
+    a: "A user agent is a text string your browser sends with every request to identify itself. It includes the browser name and version, the rendering engine, and your operating system, so servers can deliver compatible content.",
   },
   {
     q: "Why does my user agent look so complicated?",
@@ -36,7 +36,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Is my user agent unique to me?",
-    a: "Not on its own - many people share the same user agent. But combined with other browser attributes it contributes to a fingerprint that can be quite identifying.",
+    a: "Not on its own. Plenty of people share the same user agent. But combined with your other browser attributes, it adds to a fingerprint that can be quite identifying.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function Page() {
           <ul>
             <li>Serving the right layout for desktop vs mobile.</li>
             <li>Feature detection fallbacks and compatibility fixes.</li>
-            <li>Analytics - counting which browsers visitors use.</li>
+            <li>Analytics, such as counting which browsers visitors use.</li>
             <li>Bot detection and, sometimes, fingerprinting.</li>
           </ul>
           <h2>Related tools</h2>

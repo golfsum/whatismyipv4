@@ -24,11 +24,11 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "What is a WebRTC IP leak?",
-    a: "WebRTC is a browser feature for real-time audio/video. To connect peers it can discover your IP addresses - and in some cases reveal your real public IP even while a VPN is active, bypassing the tunnel.",
+    a: "WebRTC is a browser feature for real-time audio and video. To connect peers it can discover your IP addresses, and in some cases that reveals your real public IP even while a VPN is active, bypassing the tunnel.",
   },
   {
     q: "Why does the test only show a .local address?",
-    a: "Modern browsers replace your real local IP with a random mDNS '.local' hostname to protect privacy. That's the expected, safe behaviour - it means your true local IP isn't being exposed.",
+    a: "Modern browsers replace your real local IP with a random mDNS '.local' hostname to protect privacy. That's expected and safe, and it means your true local IP isn't being exposed.",
   },
   {
     q: "How do I fix a WebRTC leak?",
@@ -55,7 +55,7 @@ export default function Page() {
           <h1>WebRTC IP Leak Test</h1>
           <p>
             Check whether your browser exposes your real public IP address
-            through WebRTC - a common way VPNs leak your true location.
+            through WebRTC, a common way VPNs leak your true location.
           </p>
         </section>
 
@@ -76,15 +76,15 @@ export default function Page() {
           <h3>How to read the result</h3>
           <ul>
             <li>
-              <strong>No public IP leaked</strong> - good. WebRTC isn&apos;t
+              <strong>No public IP leaked</strong>: good. WebRTC isn&apos;t
               exposing a routable address.
             </li>
             <li>
-              <strong>Public IP exposed</strong> - if it&apos;s your real
+              <strong>Public IP exposed</strong>: if it&apos;s your real
               (non-VPN) address while connected to a VPN, you have a leak to fix.
             </li>
             <li>
-              <strong>.local addresses</strong> - harmless; your browser is
+              <strong>.local addresses</strong>: harmless; your browser is
               masking your local IP with mDNS.
             </li>
           </ul>

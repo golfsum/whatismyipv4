@@ -34,7 +34,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Why does it say 'Not detected' for IPv6?",
-    a: "It means your current network connected over IPv4 only. Many home and mobile networks have not enabled IPv6 yet. This is normal and your internet will work fine - you simply do not have a public IPv6 address right now.",
+    a: "It means your current network connected over IPv4 only. Plenty of home and mobile networks haven't enabled IPv6 yet. This is normal, and your internet will work fine. You just don't have a public IPv6 address right now.",
   },
   {
     q: "Is IPv6 better than IPv4?",
@@ -81,7 +81,7 @@ export default function Page() {
           <p>
             If the IPv6 field above shows an address, your connection is{" "}
             <strong>IPv6-enabled</strong>. If it says &quot;Not detected,&quot;
-            your network is currently IPv4-only - which is still very common and
+            your network is currently IPv4-only, which is still very common and
             perfectly fine. Whether you get IPv6 depends on your ISP, your router
             settings and the network you are on.
           </p>

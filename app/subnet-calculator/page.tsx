@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "What is a subnet calculator?",
-    a: "It takes an IP address and a CIDR prefix (like /24) and works out the network address, broadcast address, subnet mask, usable host range and total hosts - saving you the binary math.",
+    a: "It takes an IP address and a CIDR prefix (like /24) and works out the network address, broadcast address, subnet mask, usable host range and total hosts, so you don't have to do the binary math yourself.",
   },
   {
     q: "What does the /24 (CIDR) mean?",
@@ -75,23 +75,23 @@ export default function Page() {
           <h3>Key terms</h3>
           <ul>
             <li>
-              <strong>Network address</strong> - the first address; identifies
+              <strong>Network address</strong>: the first address; identifies
               the subnet itself.
             </li>
             <li>
-              <strong>Broadcast address</strong> - the last address; reaches all
+              <strong>Broadcast address</strong>: the last address; reaches all
               hosts on the subnet.
             </li>
             <li>
-              <strong>Subnet mask</strong> - the dotted-decimal form of the
+              <strong>Subnet mask</strong>: the dotted-decimal form of the
               prefix (e.g. <code>255.255.255.0</code> for /24).
             </li>
             <li>
-              <strong>Wildcard mask</strong> - the inverse of the mask, used in
+              <strong>Wildcard mask</strong>: the inverse of the mask, used in
               ACLs and routing.
             </li>
             <li>
-              <strong>Usable hosts</strong> - total addresses minus the network
+              <strong>Usable hosts</strong>: total addresses minus the network
               and broadcast addresses.
             </li>
           </ul>

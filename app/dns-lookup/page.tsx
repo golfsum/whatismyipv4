@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "What is a DNS lookup?",
-    a: "A DNS lookup queries the Domain Name System to find the records associated with a domain - such as the IP address (A/AAAA), mail servers (MX), or text records (TXT). It's how names like example.com turn into addresses computers can reach.",
+    a: "A DNS lookup queries the Domain Name System to find the records tied to a domain, such as the IP address (A/AAAA), mail servers (MX) or text records (TXT). It's how names like example.com turn into addresses computers can reach.",
   },
   {
     q: "What do the different record types mean?",
@@ -37,7 +37,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Is this the same as nslookup?",
-    a: "It serves the same purpose as the nslookup/dig commands, but runs in your browser over secure DNS-over-HTTPS - no terminal needed.",
+    a: "It does the same job as the nslookup and dig commands, but it runs in your browser over secure DNS-over-HTTPS, so there's no terminal needed.",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function Page() {
           <h1>DNS Lookup</h1>
           <p>
             Check any domain&apos;s DNS records - A, AAAA, CNAME, NS, MX, TXT, SOA
-            and CAA - instantly, using secure DNS-over-HTTPS.
+            and CAA, instantly, using secure DNS-over-HTTPS.
           </p>
         </section>
 
@@ -75,11 +75,11 @@ export default function Page() {
           </p>
           <h3>Common record types</h3>
           <ul>
-            <li><strong>A / AAAA</strong> - the IPv4 / IPv6 address of the host.</li>
-            <li><strong>CNAME</strong> - an alias pointing to another domain.</li>
-            <li><strong>MX</strong> - mail servers (see our <a href="/mx-lookup">MX lookup</a>).</li>
-            <li><strong>TXT</strong> - verification and email policies like SPF and <a href="/spf-dmarc-lookup">DMARC</a>.</li>
-            <li><strong>NS</strong> - the domain&apos;s authoritative name servers.</li>
+            <li><strong>A / AAAA</strong>: the IPv4 / IPv6 address of the host.</li>
+            <li><strong>CNAME</strong>: an alias pointing to another domain.</li>
+            <li><strong>MX</strong>: mail servers (see our <a href="/mx-lookup">MX lookup</a>).</li>
+            <li><strong>TXT</strong>: verification and email policies like SPF and <a href="/spf-dmarc-lookup">DMARC</a>.</li>
+            <li><strong>NS</strong>: the domain&apos;s authoritative name servers.</li>
           </ul>
           <h2>Related tools</h2>
           <p>

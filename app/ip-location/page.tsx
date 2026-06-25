@@ -54,8 +54,8 @@ export default function Page() {
         <section className="hero">
           <h1>Where Is My IP Address Located?</h1>
           <p>
-            See your <strong>IP location on a map</strong> - city, region,
-            country, ISP and timezone - based on your public IP address.
+            See your <strong>IP location on a map</strong>, with city, region,
+            country, ISP and timezone, all based on your public IP address.
           </p>
         </section>
 

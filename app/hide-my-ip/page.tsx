@@ -54,13 +54,13 @@ export default function Page() {
           <p>
             Your public IP reveals your approximate location and ISP. Here are
             the practical ways to <strong>hide or change your IP address</strong>{" "}
-            - and the trade-offs of each.
+            , along with the trade-offs of each.
           </p>
         </section>
 
         <div className="callout">
           First, <a href="/">see your current public IP</a> and{" "}
-          <a href="/vpn-check">run a VPN check</a> - then come back and compare
+          <a href="/vpn-check">run a VPN check</a>, then come back and compare
           your options below.
         </div>
 

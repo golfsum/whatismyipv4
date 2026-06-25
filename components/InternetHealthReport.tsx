@@ -148,7 +148,7 @@ function buildReport(m: Metrics): Report {
   if (m.latency != null && m.latency >= 100)
     suggestions.push("Switch to a wired Ethernet connection or move closer to your router to reduce latency.");
   if (m.download != null && m.download < 25)
-    suggestions.push("Your download speed is on the low side — consider a faster plan or contact your ISP.");
+    suggestions.push("Your download speed is on the low side, so consider a faster plan or contact your ISP.");
   if (!m.isVpn)
     suggestions.push("Use a VPN on public or untrusted Wi-Fi to protect your privacy.");
   suggestions.push("Restart your router every few months to clear its memory and apply firmware updates.");

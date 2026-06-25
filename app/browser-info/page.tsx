@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "What information does my browser reveal?",
-    a: "Every website you visit can read your browser type and version, operating system, screen size, time zone, language, and more - all shown above. Combined, these details form a 'fingerprint' that can help identify you even without cookies.",
+    a: "Every website you visit can read your browser type and version, operating system, screen size, time zone, language and more, all of which is shown above. Put together, these details form a 'fingerprint' that can help identify you even without cookies.",
   },
   {
     q: "Is this information sent to a server?",
@@ -36,7 +36,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is device memory and CPU cores?",
-    a: "Some browsers expose an approximate amount of RAM (device memory) and the number of logical CPU cores. Sites use these to tune performance - and, unfortunately, for fingerprinting.",
+    a: "Some browsers expose an approximate amount of RAM (device memory) and the number of logical CPU cores. Sites use these to tune performance and, unfortunately, for fingerprinting too.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function Page() {
           <h1>What Does My Browser Reveal?</h1>
           <p>
             A detailed look at the information your web browser exposes to every
-            site you visit - browser, OS, device, screen, time zone and more.
+            site you visit: browser, OS, device, screen, time zone and more.
           </p>
         </section>
 
@@ -69,25 +69,25 @@ export default function Page() {
             When you load a web page, your browser automatically shares dozens of
             details so the site can render correctly. Individually they seem
             harmless, but together they create a{" "}
-            <strong>browser fingerprint</strong> - a combination unique enough to
+            <strong>browser fingerprint</strong>: a combination unique enough to
             recognise you across visits, even in private mode and without cookies.
           </p>
           <h3>What the values mean</h3>
           <ul>
             <li>
-              <strong>Browser &amp; engine</strong> - the software rendering this
+              <strong>Browser &amp; engine</strong>: the software rendering this
               page and its layout engine (Blink, WebKit or Gecko).
             </li>
             <li>
-              <strong>Operating system &amp; device</strong> - your platform and
+              <strong>Operating system &amp; device</strong>: your platform and
               whether you&apos;re on desktop, mobile or tablet.
             </li>
             <li>
-              <strong>Screen &amp; viewport</strong> - display size, color depth
+              <strong>Screen &amp; viewport</strong>: display size, color depth
               and pixel ratio.
             </li>
             <li>
-              <strong>Time zone &amp; language</strong> - strong hints about your
+              <strong>Time zone &amp; language</strong>: strong hints about your
               region, independent of your <a href="/ip-location">IP location</a>.
             </li>
           </ul>

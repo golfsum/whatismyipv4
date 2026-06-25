@@ -71,7 +71,7 @@ export default function SpfDmarcTool() {
             ))
           ) : (
             <p className="muted">
-              No SPF record found - email from this domain is easier to spoof.
+              No SPF record found, so email from this domain is easier to spoof.
             </p>
           )}
 
@@ -84,7 +84,7 @@ export default function SpfDmarcTool() {
             ))
           ) : (
             <p className="muted">
-              No DMARC record found - consider adding one to protect against
+              No DMARC record found. Consider adding one to protect against
               spoofing.
             </p>
           )}

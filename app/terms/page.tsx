@@ -34,8 +34,8 @@ export default function Page() {
       <h2>No warranty &amp; accuracy</h2>
       <p>
         The tools are provided &quot;as is&quot; without warranties of any kind.
-        Results - including IP geolocation, VPN detection, speed tests and DNS
-        lookups - are <strong>estimates for informational purposes</strong> and
+        Results, including IP geolocation, VPN detection, speed tests and DNS
+        lookups, are <strong>estimates for informational purposes</strong> and
         may be inaccurate or incomplete. Geolocation is approximate and does not
         represent your exact address. Do not rely on results for any critical,
         legal, or security decision without independent verification.

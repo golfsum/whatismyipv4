@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const FAQ: QA[] = [
   {
     q: "What is a reverse DNS (PTR) lookup?",
-    a: "A reverse DNS lookup maps an IP address back to a hostname using a PTR record - the opposite of a normal lookup that maps a name to an IP. For example, 8.8.8.8 resolves to dns.google.",
+    a: "A reverse DNS lookup maps an IP address back to a hostname using a PTR record. It's the opposite of a normal lookup, which maps a name to an IP. For example, 8.8.8.8 resolves to dns.google.",
   },
   {
     q: "Why doesn't my IP have a PTR record?",
@@ -32,7 +32,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Why is reverse DNS important?",
-    a: "Mail servers use it to help verify senders and fight spam - a missing or mismatched PTR can cause your email to be rejected. It's also handy for diagnostics and identifying what owns an IP.",
+    a: "Mail servers use it to help verify senders and fight spam. A missing or mismatched PTR can get your email rejected. It's also handy for diagnostics and for working out what owns an IP.",
   },
   {
     q: "Does it work for IPv6?",
@@ -54,7 +54,7 @@ export default function Page() {
         <section className="hero">
           <h1>Reverse DNS Lookup</h1>
           <p>
-            Find the hostname (PTR record) behind any IPv4 or IPv6 address - the
+            Find the hostname (PTR record) behind any IPv4 or IPv6 address, the
             reverse of a normal DNS lookup.
           </p>
         </section>
@@ -75,15 +75,15 @@ export default function Page() {
           <h3>Where it&apos;s used</h3>
           <ul>
             <li>
-              <strong>Email deliverability</strong> - receiving servers check
+              <strong>Email deliverability</strong>: receiving servers check
               that a sending IP&apos;s PTR matches its forward record.
             </li>
             <li>
-              <strong>Network diagnostics</strong> - identifying which host or
+              <strong>Network diagnostics</strong>: identifying which host or
               provider an address belongs to.
             </li>
             <li>
-              <strong>Logging</strong> - turning raw IPs in logs into readable
+              <strong>Logging</strong>: turning raw IPs in logs into readable
               names.
             </li>
           </ul>

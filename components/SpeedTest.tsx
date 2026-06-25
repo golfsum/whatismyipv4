@@ -162,7 +162,7 @@ export default function SpeedTest() {
     : phase === "done"
     ? "Test complete"
     : phase === "error"
-    ? "Something went wrong - please try again."
+    ? "Something went wrong. Please try again."
     : "";
 
   return (
@@ -224,7 +224,7 @@ export default function SpeedTest() {
                 .join(", ")}
               {server.city ? ` (${server.colo})` : ""}
             </strong>{" "}
-            - the Cloudflare location closest to you, chosen automatically.
+            , the Cloudflare location closest to you, chosen automatically.
           </>
         ) : (
           <>Measurements run against Cloudflare&apos;s global network for accuracy.</>

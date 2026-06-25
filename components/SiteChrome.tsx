@@ -6,7 +6,7 @@ const NAV = [
   { href: "/speedtest", label: "Speed Test" },
   { href: "/vpn-check", label: "VPN Check" },
   { href: "/dns-lookup", label: "DNS Tools" },
-  { href: "/browser-info", label: "Browser" },
+  { href: "/guides", label: "Guides" },
   { href: "/about", label: "About" },
 ];
 
@@ -46,6 +46,7 @@ export function SiteFooter() {
           ))}
           <div className="footer-col">
             <h4>Site</h4>
+            <a href="/guides">Guides</a>
             {LEGAL_LINKS.map((l) => (
               <a key={l.href} href={l.href}>
                 {l.label}

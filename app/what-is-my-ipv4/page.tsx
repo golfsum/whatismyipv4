@@ -53,7 +53,7 @@ export default function Page() {
           <h1>What Is My IPv4 Address?</h1>
           <p>
             Instantly find your public <strong>IPv4 address</strong> along with
-            your location, ISP and VPN status - free and with no signup.
+            your location, ISP and VPN status, free and with no sign-up.
           </p>
         </section>
 
@@ -77,7 +77,7 @@ export default function Page() {
             Inside your home, every device (phone, laptop, TV) has a{" "}
             <strong>private</strong> IPv4 address handed out by your router, such
             as <code>192.168.1.10</code>. To the outside world, all of them share
-            one <strong>public</strong> IPv4 - the address shown above. To find
+            one <strong>public</strong> IPv4, the address shown above. To find
             your local one, see{" "}
             <a href="/what-is-my-router-ip">what is my router IP</a>.
           </p>
