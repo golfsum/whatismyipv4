@@ -3,17 +3,21 @@
 // entry, and "related guides" links.
 
 export type GuideCategory =
+  | "Internet Basics"
   | "Networking"
-  | "Privacy"
-  | "Gaming"
-  | "DNS"
   | "Speed"
+  | "Gaming"
+  | "Privacy"
+  | "VPN"
+  | "DNS"
+  | "Routers"
   | "Comparisons";
 
 export interface GuideSection {
   h2: string;
   body?: string[];
   bullets?: string[];
+  steps?: string[]; // rendered as a numbered list
 }
 
 export interface Guide {
@@ -664,14 +668,714 @@ export const GUIDES: Guide[] = [
       { href: "/what-is-my-ipv4", label: "IPv4 Lookup" },
     ],
   },
+
+  // ---- DNS ----------------------------------------------------------------
+  {
+    slug: "what-is-dns",
+    title: "What Is DNS, and How Does It Work?",
+    h1: "What Is DNS?",
+    description:
+      "DNS is the internet's address book. Here's what it does, how a lookup actually works behind the scenes, and why it matters for speed and privacy.",
+    category: "DNS",
+    keywords: ["what is dns", "how does dns work", "dns explained", "domain name system"],
+    readMins: 5,
+    intro: [
+      "DNS, the Domain Name System, is what lets you type whatsmyipv4.com instead of a string of numbers. It quietly turns names you can remember into the IP addresses computers actually use.",
+      "You rely on it for every site you open, yet it runs completely in the background until something goes wrong.",
+    ],
+    sections: [
+      {
+        h2: "What DNS does",
+        body: [
+          "Computers find each other by IP address, but nobody wants to memorise those. DNS bridges the gap. When you enter a web address, your device asks a DNS resolver for the matching IP, then connects to that address.",
+        ],
+      },
+      {
+        h2: "How a lookup works, step by step",
+        steps: [
+          "You type a domain into your browser.",
+          "Your device checks its own cache. If it already knows the answer, it stops here.",
+          "If not, it asks a DNS resolver, usually run by your ISP or a service like Cloudflare or Google.",
+          "The resolver works its way through the DNS hierarchy until it finds the authoritative answer.",
+          "The IP comes back, your device caches it for a while, and your browser connects.",
+        ],
+      },
+      {
+        h2: "Why DNS matters",
+        bullets: [
+          "Speed: a fast resolver shaves a few milliseconds off the first connection to every new site.",
+          "Reliability: if your DNS is flaky, sites fail to load even when your internet is fine.",
+          "Privacy: your resolver can see every domain you visit, so the one you choose matters.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What happens if DNS goes down?",
+        a: "Websites stop resolving, so they won't load by name even though your connection still works. Switching to a public resolver like 1.1.1.1 often fixes it instantly.",
+      },
+      {
+        q: "Is changing my DNS safe?",
+        a: "Yes. It's a simple, reversible setting. Public resolvers from Cloudflare and Google are well known and trustworthy.",
+      },
+    ],
+    related: ["how-dns-works-too", "best-dns-servers", "how-to-change-dns", "how-to-flush-dns"],
+    tools: [
+      { href: "/dns-lookup", label: "DNS Lookup" },
+      { href: "/reverse-dns", label: "Reverse DNS" },
+    ],
+  },
+
+  {
+    slug: "how-to-flush-dns",
+    title: "How to Flush Your DNS Cache (Windows, Mac, Chrome)",
+    h1: "How to Flush Your DNS Cache",
+    description:
+      "Flushing the DNS cache fixes stale records and 'site won't load' problems. Clear, copy-paste steps for Windows, macOS, and Chrome.",
+    category: "DNS",
+    keywords: ["how to flush dns", "flush dns cache", "clear dns cache", "ipconfig flushdns"],
+    readMins: 4,
+    intro: [
+      "Your device keeps a local cache of DNS answers so pages load faster. When a site moves to a new server, that cache can hold an old address and the page fails to load. Flushing it forces a fresh lookup.",
+    ],
+    sections: [
+      {
+        h2: "Windows",
+        steps: [
+          "Press the Windows key, type cmd, and open Command Prompt.",
+          "Type: ipconfig /flushdns",
+          "Press Enter. You'll see 'Successfully flushed the DNS Resolver Cache.'",
+        ],
+      },
+      {
+        h2: "macOS",
+        steps: [
+          "Open Terminal (press Cmd + Space, type Terminal, hit Enter).",
+          "Type: sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder",
+          "Press Enter and type your password when asked. Nothing prints, which is normal.",
+        ],
+      },
+      {
+        h2: "Google Chrome",
+        body: [
+          "Chrome keeps its own small DNS cache. Visit chrome://net-internals/#dns and click 'Clear host cache'. Do this along with the system flush above if a single site is misbehaving only in Chrome.",
+        ],
+      },
+      {
+        h2: "When flushing helps",
+        bullets: [
+          "A website moved hosts and now loads the wrong page or an error.",
+          "You just changed your own DNS records and want to see the update.",
+          "You switched DNS providers and want a clean slate.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Does flushing DNS delete anything important?",
+        a: "No. It only clears temporary cached lookups. Your device simply re-fetches them the next time you visit a site.",
+      },
+      {
+        q: "Will it fix slow internet?",
+        a: "Only if the slowness came from bad cached records. For general slowness, run a speed test and check the usual causes first.",
+      },
+    ],
+    related: ["how-to-change-dns", "what-is-dns", "best-dns-servers"],
+    tools: [
+      { href: "/dns-lookup", label: "DNS Lookup" },
+      { href: "/", label: "Check your connection" },
+    ],
+  },
+
+  {
+    slug: "how-to-change-dns",
+    title: "How to Change Your DNS Server",
+    h1: "How to Change Your DNS Server",
+    description:
+      "Switching to Cloudflare or Google DNS can speed up browsing and add privacy. Step-by-step instructions for Windows, Mac, your router, iPhone, and Android.",
+    category: "DNS",
+    keywords: ["how to change dns", "change dns server", "set dns", "cloudflare dns setup"],
+    readMins: 6,
+    intro: [
+      "Changing your DNS server is one of the quickest free tweaks you can make. It can speed up the first connection to new sites and keep your browsing out of your ISP's logs.",
+      "The two most popular free choices are Cloudflare (1.1.1.1 and 1.0.0.1) and Google (8.8.8.8 and 8.8.4.4). Set it on one device, or set it on your router to cover everything at once.",
+    ],
+    sections: [
+      {
+        h2: "Windows",
+        steps: [
+          "Open Settings, then Network & Internet, then your connection's properties.",
+          "Find 'DNS server assignment' and choose Edit, then Manual.",
+          "Turn on IPv4 and enter 1.1.1.1 as preferred and 1.0.0.1 as alternate.",
+          "Save, then flush your DNS cache so the change takes effect.",
+        ],
+      },
+      {
+        h2: "macOS",
+        steps: [
+          "Open System Settings, then Network, and select your active connection.",
+          "Click Details, then DNS.",
+          "Remove the existing entries and add 1.1.1.1 and 1.0.0.1.",
+          "Click OK, then Apply.",
+        ],
+      },
+      {
+        h2: "Your router (covers every device)",
+        steps: [
+          "Open your router's settings by entering its IP in a browser (often 192.168.1.1).",
+          "Sign in, then find the DNS or WAN settings.",
+          "Replace the DNS servers with 1.1.1.1 and 1.0.0.1.",
+          "Save and reboot the router.",
+        ],
+      },
+      {
+        h2: "iPhone and Android",
+        bullets: [
+          "iPhone: Settings, Wi-Fi, tap your network, Configure DNS, switch to Manual, add 1.1.1.1.",
+          "Android: Settings, Network & internet, Private DNS, choose 'Private DNS provider hostname' and enter one.one.one.one for Cloudflare.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Which is better, Cloudflare or Google?",
+        a: "Both are fast and reliable. Cloudflare leans harder on privacy in its public commitments. Try each and keep whichever feels quicker for you.",
+      },
+      {
+        q: "How do I undo the change?",
+        a: "Go back to the same setting and switch DNS assignment back to Automatic. Your ISP's default returns right away.",
+      },
+    ],
+    related: ["best-dns-servers", "google-dns-vs-cloudflare-dns", "how-to-flush-dns", "what-is-dns"],
+    tools: [
+      { href: "/dns-lookup", label: "DNS Lookup" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  {
+    slug: "best-dns-servers",
+    title: "The Best DNS Servers (Free and Fast)",
+    h1: "The Best Free DNS Servers",
+    description:
+      "A short, honest list of the best free public DNS servers for speed, privacy, and family filtering, with the exact addresses to use.",
+    category: "DNS",
+    keywords: ["best dns servers", "fastest dns", "free dns", "best dns for privacy"],
+    readMins: 5,
+    intro: [
+      "Your ISP's default DNS is usually fine, but a good public resolver can be a touch faster and far more private. Here are the ones worth using and what each is good at.",
+    ],
+    sections: [
+      {
+        h2: "The top picks",
+        bullets: [
+          "Cloudflare, 1.1.1.1 and 1.0.0.1. Fast and privacy-focused, with a strong promise not to sell your data.",
+          "Google, 8.8.8.8 and 8.8.4.4. Rock solid and available everywhere.",
+          "Quad9, 9.9.9.9. Blocks known malicious domains, which adds a layer of safety.",
+          "Cloudflare for Families, 1.1.1.3. Blocks malware and adult content, handy for home networks.",
+        ],
+      },
+      {
+        h2: "Which should you pick?",
+        bullets: [
+          "Want speed and privacy: Cloudflare 1.1.1.1.",
+          "Want maximum reliability: Google 8.8.8.8.",
+          "Want built-in security filtering: Quad9.",
+          "Want family-safe browsing: Cloudflare for Families.",
+        ],
+      },
+      {
+        h2: "How to start using one",
+        body: [
+          "Set it on a single device, or set it on your router to cover the whole house. Our guide on changing your DNS server walks through each platform with exact steps.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Will a different DNS make my internet faster?",
+        a: "It can make the first lookup for a new site a little quicker, but it won't raise your bandwidth. Think snappier, not faster downloads.",
+      },
+      {
+        q: "Is it safe to use a public DNS?",
+        a: "Yes. The providers listed here are well established. They're generally more private than an ISP resolver that may log and monetise your browsing.",
+      },
+    ],
+    related: ["google-dns-vs-cloudflare-dns", "how-to-change-dns", "what-is-dns", "how-to-lower-ping"],
+    tools: [
+      { href: "/dns-lookup", label: "DNS Lookup" },
+      { href: "/speedtest", label: "Speed Test" },
+    ],
+  },
+
+  // ---- VPN ----------------------------------------------------------------
+  {
+    slug: "what-is-a-vpn",
+    title: "What Is a VPN, and Do You Need One?",
+    h1: "What Is a VPN?",
+    description:
+      "A plain-English explainer on what a VPN actually does, what it protects you from, what it doesn't, and whether it's worth using.",
+    category: "VPN",
+    keywords: ["what is a vpn", "vpn explained", "do i need a vpn", "what does a vpn do"],
+    readMins: 5,
+    intro: [
+      "A VPN, or Virtual Private Network, sends your internet traffic through an encrypted tunnel to a server run by the VPN provider. Websites then see that server's IP address instead of yours.",
+      "It's a useful privacy tool, but it's often oversold. Here's what it really does.",
+    ],
+    sections: [
+      {
+        h2: "What a VPN protects",
+        bullets: [
+          "Your IP address, which it swaps for the server's, hiding your rough location.",
+          "Your traffic on untrusted networks, since it's encrypted. That matters most on public Wi-Fi.",
+          "Your browsing from your ISP, which can no longer see which sites you visit.",
+        ],
+      },
+      {
+        h2: "What a VPN does not do",
+        bullets: [
+          "It doesn't make you anonymous. Logins, cookies, and browser fingerprinting still identify you.",
+          "It doesn't stop malware or scams on its own.",
+          "It doesn't speed up your connection. It usually adds a small slowdown.",
+        ],
+      },
+      {
+        h2: "Should you use one?",
+        body: [
+          "If you often use public Wi-Fi, want to keep your browsing private from your ISP, or need to appear in another region, a reputable no-logs VPN is worth it. For browsing at home on your own network, the benefit is smaller. Choose a paid provider with a clear no-logs policy and a kill switch.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Are free VPNs safe?",
+        a: "Be careful. Running a VPN costs money, so some free services make it back by logging or selling your data. A trustworthy paid VPN, or a reputable free tier with limits, is safer.",
+      },
+      {
+        q: "Will a VPN slow me down?",
+        a: "A good one only a little. Encryption and the extra hop add some overhead, but quality providers stay fast enough for streaming and calls.",
+      },
+    ],
+    related: ["vpn-vs-proxy", "vpn-vs-tor", "how-to-test-your-vpn", "can-someone-find-my-location-from-my-ip"],
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+    ],
+  },
+
+  {
+    slug: "how-to-test-your-vpn",
+    title: "How to Test If Your VPN Is Working",
+    h1: "How to Test Your VPN",
+    description:
+      "Confirm your VPN is actually hiding your IP and not leaking. A quick, step-by-step check for IP, DNS, and WebRTC leaks.",
+    category: "VPN",
+    keywords: ["how to test your vpn", "is my vpn working", "vpn leak test", "test vpn"],
+    readMins: 4,
+    intro: [
+      "Turning a VPN on isn't proof it's working. A few quick checks confirm it's hiding your real IP and not leaking through a side channel.",
+    ],
+    sections: [
+      {
+        h2: "Check your IP and location",
+        steps: [
+          "With the VPN off, open our home page and note your IP address and city.",
+          "Connect your VPN and pick a server in another country.",
+          "Reload the home page. The IP, ISP, and location should now match the VPN server, not your real connection.",
+        ],
+      },
+      {
+        h2: "Check for a WebRTC leak",
+        steps: [
+          "Keep the VPN connected.",
+          "Open our IP leak test.",
+          "If it shows your real public IP, WebRTC is leaking. Turn off WebRTC in your browser or use a VPN that blocks it.",
+        ],
+      },
+      {
+        h2: "Check for a DNS leak",
+        body: [
+          "Run the VPN check while connected. If the network owner shown is your real ISP rather than the VPN, your DNS may be leaking. Enable your VPN's own DNS or its leak protection in settings.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "My VPN passed the IP test but I'm still worried. What else?",
+        a: "Run the WebRTC leak test and confirm the VPN's kill switch is on. The kill switch blocks traffic if the VPN drops, which prevents accidental exposure.",
+      },
+    ],
+    related: ["what-is-a-vpn", "vpn-vs-proxy", "can-someone-find-my-location-from-my-ip"],
+    tools: [
+      { href: "/vpn-check", label: "VPN Check" },
+      { href: "/ip-leak-test", label: "IP Leak Test" },
+      { href: "/", label: "Check your IP" },
+    ],
+  },
+
+  // ---- Internet Basics ----------------------------------------------------
+  {
+    slug: "private-vs-public-ip",
+    title: "Private IP vs Public IP: What's the Difference?",
+    h1: "Private IP vs Public IP",
+    description:
+      "Your devices have private IPs at home and share one public IP online. Here's the difference, how to find each, and why it matters.",
+    category: "Internet Basics",
+    keywords: ["private vs public ip", "public ip vs private ip", "what is a private ip", "local ip"],
+    readMins: 4,
+    intro: [
+      "Every device on your network has two kinds of address in play: a private IP used inside your home, and the single public IP your whole network shows to the internet.",
+    ],
+    sections: [
+      {
+        h2: "Private IP",
+        body: [
+          "Your router hands each device a private address, like 192.168.1.10. These only work inside your local network, and every home reuses the same ranges. They're how your devices talk to each other and to the router.",
+        ],
+      },
+      {
+        h2: "Public IP",
+        body: [
+          "Your router has one public address, assigned by your ISP. That's what websites and online games see. All your devices share it through a process called NAT, which keeps track of which reply goes to which device.",
+        ],
+      },
+      {
+        h2: "How to find each one",
+        bullets: [
+          "Public IP: it's shown at the top of our home page.",
+          "Private IP on Windows: open Command Prompt and run ipconfig, then read the IPv4 address.",
+          "Private IP on a phone: Settings, Wi-Fi, tap your network, and look for the IP address.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Which IP do websites see?",
+        a: "Your public IP. Your private IP never leaves your local network, so sites can't see it.",
+      },
+      {
+        q: "Why do private IPs start with 192.168?",
+        a: "Those ranges (along with 10.x and 172.16 to 172.31) are reserved for private networks, so they're free for everyone to reuse at home without clashing on the public internet.",
+      },
+    ],
+    related: ["static-vs-dynamic-ip", "what-is-my-router-ip-guide", "ipv4-vs-ipv6", "why-does-my-ip-keep-changing"],
+    tools: [
+      { href: "/", label: "Check your public IP" },
+      { href: "/what-is-my-router-ip", label: "Find your router IP" },
+    ],
+  },
+
+  {
+    slug: "how-to-change-your-ip-address",
+    title: "How to Change Your IP Address",
+    h1: "How to Change Your IP Address",
+    description:
+      "Several ways to change your public or local IP address, from a simple router restart to using a VPN, with clear steps for each.",
+    category: "Internet Basics",
+    keywords: ["how to change my ip address", "change ip address", "get a new ip", "new ip address"],
+    readMins: 5,
+    intro: [
+      "There are a few ways to change your IP, depending on whether you want a different public address, a fresh local one, or to appear in another location entirely.",
+    ],
+    sections: [
+      {
+        h2: "Change your public IP",
+        steps: [
+          "Unplug your router for a couple of minutes, then plug it back in. Many ISPs hand out a new address when it reconnects.",
+          "If it doesn't change, leave the router off for longer, since the old address lease may still be held.",
+          "Still stuck? Contact your ISP and ask whether your plan uses a static address.",
+        ],
+      },
+      {
+        h2: "Appear in a different location",
+        body: [
+          "Use a VPN. It replaces your public IP with the VPN server's, so you can appear in another city or country instantly. This is the fastest and most flexible option.",
+        ],
+      },
+      {
+        h2: "Change your local IP",
+        steps: [
+          "On Windows, open Command Prompt and run ipconfig /release, then ipconfig /renew.",
+          "Your router will usually hand back a different local address.",
+        ],
+      },
+      {
+        h2: "Switch networks",
+        body: [
+          "Moving from Wi-Fi to mobile data, or to a different Wi-Fi network, gives you a completely different public IP with no settings to change.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is changing my IP legal?",
+        a: "Yes. Getting a new IP, or using a VPN to change it, is perfectly legal in most places. It's a normal part of how networks work.",
+      },
+      {
+        q: "Will changing my IP make me anonymous?",
+        a: "No. It changes the address sites see, but cookies, logins, and fingerprinting can still identify you. Pair it with privacy-focused browser settings for more.",
+      },
+    ],
+    related: ["why-does-my-ip-keep-changing", "what-is-a-vpn", "private-vs-public-ip", "can-someone-find-my-location-from-my-ip"],
+    tools: [
+      { href: "/", label: "Check your current IP" },
+      { href: "/vpn-check", label: "VPN Check" },
+    ],
+  },
+
+  // ---- Networking & Routers ----------------------------------------------
+  {
+    slug: "packet-loss-explained",
+    title: "Packet Loss Explained (and How to Fix It)",
+    h1: "What Is Packet Loss?",
+    description:
+      "Packet loss causes lag, stutter, and dropped calls. Here's what it is, what causes it, and the steps that actually reduce it.",
+    category: "Networking",
+    keywords: ["packet loss", "what is packet loss", "fix packet loss", "packet loss gaming"],
+    readMins: 5,
+    intro: [
+      "Data travels across the internet in small chunks called packets. When some of them never arrive, that's packet loss. A little is normal. A lot causes lag, stutter in calls, and rubber-banding in games.",
+    ],
+    sections: [
+      {
+        h2: "What causes it",
+        bullets: [
+          "Weak Wi-Fi, the most common culprit at home.",
+          "An overloaded connection, with too much going on at once.",
+          "Faulty cables or a failing router.",
+          "Congestion or routing problems on your ISP's network.",
+        ],
+      },
+      {
+        h2: "How to reduce it",
+        steps: [
+          "Switch to a wired Ethernet connection for the device that matters most.",
+          "Move closer to the router, or reduce interference from other devices and networks.",
+          "Restart your router to clear congestion.",
+          "Replace any old or damaged Ethernet cables.",
+          "If it only happens at certain times or to certain destinations, note the details and report them to your ISP.",
+        ],
+      },
+      {
+        h2: "How much is too much?",
+        body: [
+          "Under 1 percent is generally fine. Between 1 and 2.5 percent you'll start to notice problems in real-time apps. Above that, calls and games become frustrating.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "How do I know if I have packet loss?",
+        a: "Lag and stutter in calls or games that come and go are a strong sign, especially when your speed test looks fine. Wiring in and seeing the problem disappear usually confirms it was Wi-Fi.",
+      },
+    ],
+    related: ["how-to-lower-ping", "why-is-my-internet-slow", "ethernet-vs-wifi"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  {
+    slug: "how-to-restart-your-router",
+    title: "How to Restart Your Router the Right Way",
+    h1: "How to Restart Your Router (Properly)",
+    description:
+      "A proper router restart fixes a surprising number of internet problems. Here's the right way to do it, and why the order and timing matter.",
+    category: "Routers",
+    keywords: ["how to restart router", "reboot router", "restart modem and router", "router restart"],
+    readMins: 4,
+    intro: [
+      "Restarting your router clears its memory, drops stuck connections, and often picks a cleaner Wi-Fi channel. It's the single most effective first step for a flaky connection.",
+    ],
+    sections: [
+      {
+        h2: "The right way to do it",
+        steps: [
+          "Unplug the router from power. If your modem is a separate box, unplug that too.",
+          "Wait a full 30 seconds. This lets the hardware fully reset and your ISP release the old connection.",
+          "Plug the modem back in first and wait for its lights to settle.",
+          "Plug the router back in and wait a minute or two for Wi-Fi to come back.",
+          "Reconnect a device and test your connection.",
+        ],
+      },
+      {
+        h2: "Restart, don't reset",
+        body: [
+          "A restart just power-cycles the device and keeps all your settings. A factory reset (the pinhole button) wipes everything, including your Wi-Fi name and password. Stick to a restart unless you truly mean to start over.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "How often should I restart my router?",
+        a: "Once every month or two is a good habit, plus any time your connection acts up. There's no need to do it daily.",
+      },
+      {
+        q: "Why wait 30 seconds?",
+        a: "It ensures the device powers down fully and your ISP drops the stale session, so you come back with a clean connection.",
+      },
+    ],
+    related: ["improve-wifi-signal", "why-is-my-internet-slow", "what-is-my-router-ip-guide"],
+    tools: [
+      { href: "/", label: "Check your connection" },
+      { href: "/what-is-my-router-ip", label: "Find your router IP" },
+    ],
+  },
+
+  {
+    slug: "improve-wifi-signal",
+    title: "How to Improve Your WiFi Signal",
+    h1: "How to Improve Your Wi-Fi Signal",
+    description:
+      "Weak Wi-Fi in part of your home? Practical, no-cost fixes first, then the upgrades worth paying for, in order of impact.",
+    category: "Routers",
+    keywords: ["improve wifi signal", "boost wifi", "fix weak wifi", "better wifi at home"],
+    readMins: 5,
+    intro: [
+      "Most Wi-Fi problems come down to placement and interference, not your internet plan. Try the free fixes first, then consider hardware if you still have dead spots.",
+    ],
+    sections: [
+      {
+        h2: "Free fixes to try first",
+        steps: [
+          "Move the router to a central, open spot, up high and away from walls.",
+          "Keep it clear of microwaves, cordless phones, and thick metal or concrete.",
+          "Connect to the 5 GHz band when you're nearby, since it's faster at short range.",
+          "Restart the router so it picks a less crowded channel.",
+          "Update the router's firmware from its settings page.",
+        ],
+      },
+      {
+        h2: "Upgrades worth paying for",
+        bullets: [
+          "A mesh Wi-Fi system, which uses several units to blanket a larger home.",
+          "A modern Wi-Fi 6 router if yours is several years old.",
+          "A wired Ethernet run to the rooms that need rock-solid speed.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Do Wi-Fi extenders work?",
+        a: "They can fill a dead spot, but they often halve the speed at the extender. A mesh system usually gives a better, more seamless result for whole-home coverage.",
+      },
+      {
+        q: "Is 2.4 GHz or 5 GHz better?",
+        a: "5 GHz is faster but doesn't reach as far. 2.4 GHz is slower but travels further and through more walls. Use 5 GHz near the router and 2.4 GHz for distant rooms.",
+      },
+    ],
+    related: ["how-to-restart-your-router", "ethernet-vs-wifi", "why-is-my-internet-slow"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  // ---- Comparisons --------------------------------------------------------
+  {
+    slug: "ethernet-vs-wifi",
+    title: "Ethernet vs WiFi: Which Should You Use?",
+    h1: "Ethernet vs Wi-Fi",
+    description:
+      "Ethernet is faster and steadier, Wi-Fi is convenient. Here's how they compare on speed, latency, and reliability, and when each makes sense.",
+    category: "Comparisons",
+    keywords: ["ethernet vs wifi", "wired vs wireless", "is ethernet better than wifi", "ethernet vs wifi gaming"],
+    readMins: 4,
+    intro: [
+      "Both get you online, but they behave very differently. Ethernet trades convenience for speed and consistency, while Wi-Fi trades a bit of both for the freedom to move around.",
+    ],
+    sections: [
+      {
+        h2: "How they compare",
+        bullets: [
+          "Speed: Ethernet delivers your full plan speed reliably. Wi-Fi drops off with distance and interference.",
+          "Latency: Ethernet has lower, steadier ping, which matters for gaming and calls.",
+          "Stability: Ethernet rarely drops. Wi-Fi competes with neighbours and household devices.",
+          "Convenience: Wi-Fi wins easily here, with no cables and full mobility.",
+        ],
+      },
+      {
+        h2: "When to use each",
+        bullets: [
+          "Use Ethernet for gaming consoles, desktops, and anything streaming 4K or doing big uploads.",
+          "Use Wi-Fi for phones, tablets, laptops, and smart-home gear where convenience matters more.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is Ethernet really better for gaming?",
+        a: "Yes. It gives lower, more consistent ping and almost no packet loss, which is exactly what competitive games need. It's the top fix for lag.",
+      },
+      {
+        q: "Can I mix both?",
+        a: "Absolutely. Wire in the devices that need stability and leave everything else on Wi-Fi. That's what most homes do.",
+      },
+    ],
+    related: ["how-to-lower-ping", "packet-loss-explained", "improve-wifi-signal", "fiber-vs-cable-internet"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Internet Health Report" },
+    ],
+  },
+
+  {
+    slug: "fiber-vs-cable-internet",
+    title: "Fiber vs Cable Internet: Which Is Better?",
+    h1: "Fiber vs Cable Internet",
+    description:
+      "Fiber and cable both deliver fast internet, but they differ in upload speed, consistency, and availability. Here's how to choose.",
+    category: "Comparisons",
+    keywords: ["fiber vs cable", "fiber vs cable internet", "is fiber better than cable", "fiber internet"],
+    readMins: 4,
+    intro: [
+      "Fiber and cable are the two most common ways to get fast home internet. Download speeds can look similar on paper, but the experience differs once you dig in.",
+    ],
+    sections: [
+      {
+        h2: "The key differences",
+        bullets: [
+          "Upload speed: fiber is usually symmetrical, so uploads match downloads. Cable uploads are much slower than downloads.",
+          "Consistency: fiber speeds hold steady. Cable can slow at peak times because neighbours share capacity.",
+          "Latency: fiber tends to have slightly lower, steadier ping.",
+          "Availability: cable is far more widely available. Fiber is growing but not everywhere yet.",
+        ],
+      },
+      {
+        h2: "Which should you choose?",
+        body: [
+          "If fiber is available at a similar price, it's the better choice, especially if you upload a lot, work from home, or video call often. If fiber isn't an option, modern cable is still plenty fast for most households.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Why does upload speed matter?",
+        a: "Video calls, cloud backups, posting media, and online gaming all rely on upload. Fiber's symmetrical upload makes those noticeably smoother than cable.",
+      },
+      {
+        q: "Is fiber worth paying more for?",
+        a: "If you work from home or have a busy household, the steadier speed and faster upload are usually worth it. For light browsing and streaming, cable is fine.",
+      },
+    ],
+    related: ["ethernet-vs-wifi", "download-vs-upload-speed", "why-is-my-internet-slow"],
+    tools: [
+      { href: "/speedtest", label: "Speed Test" },
+      { href: "/", label: "Check your connection" },
+    ],
+  },
 ];
 
 export const GUIDE_CATEGORIES: GuideCategory[] = [
+  "Internet Basics",
   "Networking",
   "Speed",
   "Gaming",
   "Privacy",
+  "VPN",
   "DNS",
+  "Routers",
   "Comparisons",
 ];
 

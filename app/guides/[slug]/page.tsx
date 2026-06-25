@@ -84,6 +84,13 @@ export default async function GuidePage({
                   ))}
                 </ul>
               )}
+              {s.steps && (
+                <ol className="guide-steps">
+                  {s.steps.map((st, j) => (
+                    <li key={j}>{st}</li>
+                  ))}
+                </ol>
+              )}
             </section>
           ))}
         </article>
