@@ -1,0 +1,5 @@
+# Google AdSense ads.txt
+# Replace pub-0000000000000000 with YOUR AdSense publisher ID (the digits
+# after "ca-" in your ca-pub-XXXXXXXXXXXXXXXX client ID). Required by AdSense
+# to verify you own this domain before ads will serve.
+google.com, pub-9338208326017502, DIRECT, f08c47fec0942fa0
