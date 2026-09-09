@@ -2,11 +2,11 @@ import { SITE_NAME } from "@/lib/config";
 import { TOOLS, LEGAL_LINKS, TOOL_CATEGORIES } from "@/lib/tools";
 import { CATEGORIES } from "@/lib/categories";
 
-// Curated top-nav (most popular tools).
 const NAV = [
   { href: "/tools", label: "Tools" },
   { href: "/speedtest", label: "Speed Test" },
   { href: "/vpn-check", label: "VPN Check" },
+  { href: "/geo-test", label: "Geo Test" },
   { href: "/guides", label: "Guides" },
   { href: "/about", label: "About" },
 ];
@@ -52,6 +52,11 @@ export function SiteFooter() {
                 {c.name}
               </a>
             ))}
+          </div>
+          <div className="footer-col">
+            <h4>Products</h4>
+            <a href="/geo-test">Geo Test</a>
+            <a href="/geo-test/signup">Create Geo Test account</a>
           </div>
           <div className="footer-col">
             <h4>Site</h4>
