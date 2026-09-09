@@ -13,7 +13,6 @@ import {
   ADSENSE_SLOT_BOTTOM,
 } from "@/lib/config";
 
-// Curated featured tools for the homepage (the rest live on /tools).
 const FEATURED = [
   "/",
   "/speedtest",
@@ -38,8 +37,12 @@ const LATEST_GUIDES = [
 
 const FAQ: QA[] = [
   {
+    q: "What is my IPv4 address?",
+    a: "Your public IPv4 address is the dotted number shown at the top of this page, such as 192.0.2.1. It identifies your internet connection to websites and online services. The value appears automatically when the page loads.",
+  },
+  {
     q: "What is my IP address?",
-    a: "Your IP (Internet Protocol) address is the unique number that identifies your device on the internet. The big number at the top of this page is your current public IP address as seen by the websites you connect to.",
+    a: "Your IP (Internet Protocol) address is the unique number that identifies your device or internet connection online. This page shows your current public IP address as seen by the websites you connect to.",
   },
   {
     q: "What is the difference between IPv4 and IPv6?",
@@ -70,11 +73,11 @@ export default function Home() {
 
       <main className="container">
         <section className="hero">
-          <h1>Complete Internet Diagnostics</h1>
+          <h1>What Is My IPv4 Address?</h1>
           <p>
-            Check your <strong>IP address</strong>, internet{" "}
-            <strong>speed</strong>, latency, <strong>VPN status</strong>, browser
-            information and network health, all in one place. Free, no signup.
+            Check your <strong>public IPv4 address</strong> instantly, then see your
+            IPv6 address, ISP, approximate location, VPN status, internet speed,
+            latency and network health. Free, no signup.
           </p>
           <div className="cta-row">
             <a className="cta cta-primary" href="/internet-health-check">
@@ -90,6 +93,21 @@ export default function Home() {
         </section>
 
         <IpDashboard />
+
+        <section className="content">
+          <h2>Check your current public IPv4 address</h2>
+          <p>
+            Your public IPv4 address is the address websites see when your device
+            connects to the internet. Use the IP details above to confirm your
+            current address, then check your ISP and approximate IP location or
+            compare IPv4 with IPv6.
+          </p>
+          <ul className="link-list">
+            <li><a href="/ip-location">Check your IP location</a></li>
+            <li><a href="/vpn-check">Check whether your IP is using a VPN or proxy</a></li>
+            <li><a href="/guides/ipv4-vs-ipv6">Learn the difference between IPv4 and IPv6</a></li>
+          </ul>
+        </section>
 
         <InternetHealthReport />
 
