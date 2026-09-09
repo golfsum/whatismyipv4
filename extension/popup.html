@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Geo Test</title>
+  <style>
+    body{font:14px system-ui,sans-serif;margin:0;padding:16px;width:320px;background:#0b1020;color:#eef2ff}h1{font-size:18px;margin:0 0 6px}p{color:#aeb8d4;line-height:1.4}label{display:block;margin:12px 0 5px;font-weight:600}input{box-sizing:border-box;width:100%;padding:9px;border-radius:8px;border:1px solid #374060;background:#151c31;color:#fff}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:8px;margin-top:14px}button{border:0;border-radius:8px;padding:10px 12px;cursor:pointer;font-weight:700}#apply{background:#7c9cff;color:#07101f}#clear{background:#29324d;color:#eef2ff}#status{min-height:20px;margin-top:10px;color:#bdd0ff}.fine{font-size:11px;color:#8490ad;margin-top:12px}
+  </style>
+</head>
+<body>
+  <h1>WhatsMyIPv4 Geo Test</h1>
+  <p>Apply a QA test location to the active tab.</p>
+  <div class="row">
+    <div><label for="lat">Latitude</label><input id="lat" type="number" step="any" placeholder="51.5074"></div>
+    <div><label for="lon">Longitude</label><input id="lon" type="number" step="any" placeholder="-0.1278"></div>
+  </div>
+  <label for="accuracy">Accuracy (meters)</label><input id="accuracy" type="number" min="1" value="25">
+  <div class="actions"><button id="apply">Apply location</button><button id="clear">Clear</button></div>
+  <div id="status"></div>
+  <p class="fine">For QA, localization, and privacy testing. The browser may show a debugging indicator while the override is active.</p>
+  <script src="popup.js"></script>
+</body>
+</html>
