@@ -13,18 +13,23 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "What's My IP? - Internet Connection & Network Diagnostics | WhatsMyIPv4",
+      "What Is My IPv4 Address? Check Your Public IP | WhatsMyIPv4",
     template: "%s | WhatsMyIPv4",
   },
   description:
-    "What is my IP? Instantly see your public IPv4 and IPv6 address, location on a map, ISP, city, country and whether you're connected to a VPN or proxy. Free IP address lookup, no signup.",
+    "Check your public IPv4 address instantly. See your current IP, IPv6 address, ISP, approximate location, and VPN or proxy status with free network diagnostic tools.",
   keywords: [
+    "what is my ipv4 address",
+    "what is my ipv4",
+    "check ipv4 address",
+    "find my ipv4",
+    "current ipv4",
+    "public ipv4 address",
     "what is my ip",
     "what is my ip address",
     "my ip",
     "my ip address",
     "whatismyip",
-    "what is my ipv4",
     "what is my ipv6",
     "ip address lookup",
     "find my ip",
@@ -46,15 +51,15 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "What Is My IP Address? - IPv4, IPv6, Location & VPN Check",
+    title: "What Is My IPv4 Address? Check Your Public IP",
     description:
-      "Instantly find your public IP address, geolocation on a map, ISP and VPN/proxy status. Free, fast, no signup.",
+      "Instantly check your public IPv4 and IPv6 address, ISP, approximate location and VPN/proxy status. Free, fast and no signup.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "What Is My IP Address? - IPv4, IPv6 & VPN Check",
+    title: "What Is My IPv4 Address? Check Your Public IP",
     description:
-      "See your public IP, location on a map, ISP and VPN status instantly.",
+      "See your current public IPv4, IPv6, ISP, approximate location and VPN status instantly.",
   },
   category: "technology",
 };
@@ -82,7 +87,6 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         )}
-        {/* Structured data: WebSite + Organization for rich results */}
         <Script
           id="ld-website"
           type="application/ld+json"
@@ -93,12 +97,7 @@ export default function RootLayout({
               name: SITE_NAME,
               url: SITE_URL,
               description:
-                "Free tool to find your public IPv4 and IPv6 address, location, ISP and VPN status.",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: `${SITE_URL}/?q={search_term_string}`,
-                "query-input": "required name=search_term_string",
-              },
+                "Free tool to check your public IPv4 and IPv6 address, ISP, approximate location and VPN status.",
             }),
           }}
         />
