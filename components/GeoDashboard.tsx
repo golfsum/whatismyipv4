@@ -1,11 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 type User = { email: string; plan: string };
 type SavedLocation = { id: string; name: string; latitude: number; longitude: number; timezone: string; createdAt: string };
-
 type BrowserLocation = { latitude: number; longitude: number; accuracy: number } | null;
 
 export default function GeoDashboard() {
@@ -13,6 +12,8 @@ export default function GeoDashboard() {
   const [user, setUser] = useState<User | null>(null);
   const [locations, setLocations] = useState<SavedLocation[]>([]);
   const [browserLocation, setBrowserLocation] = useState<BrowserLocation>(null);
+  const [detectedTimezone, setDetectedTimezone] = useState("Detecting…");
+  const [locale, setLocale] = useState("Detecting…");
   const [geoError, setGeoError] = useState("");
   const [name, setName] = useState("");
   const [latitude, setLatitude] = useState("");
@@ -20,10 +21,9 @@ export default function GeoDashboard() {
   const [timezone, setTimezone] = useState("");
   const [message, setMessage] = useState("");
 
-  const detectedTimezone = useMemo(() => Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown", []);
-  const locale = useMemo(() => navigator.language || "Unknown", []);
-
   useEffect(() => {
+    setDetectedTimezone(Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown");
+    setLocale(navigator.language || "Unknown");
     Promise.all([fetch("/api/geo/auth"), fetch("/api/geo/locations")]).then(async ([auth, loc]) => {
       const authData = await auth.json();
       if (!authData.user) {
