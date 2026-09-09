@@ -7,13 +7,13 @@ import { CATEGORIES } from "@/lib/categories";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Unique paths from the tool registry + legal pages + guides hub & articles.
   const paths = Array.from(
     new Set([
       ...TOOLS.map((t) => t.href),
       ...LEGAL_LINKS.map((l) => l.href),
       "/tools",
       "/guides",
+      "/geo-test",
       ...GUIDES.map((g) => `/guides/${g.slug}`),
       ...CATEGORIES.map((c) => `/topics/${c.slug}`),
     ])
@@ -23,6 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${path === "/" ? "" : path}`,
     lastModified: now,
     changeFrequency: path === "/" ? "daily" : "weekly",
-    priority: path === "/" ? 1 : path.startsWith("/about") ? 0.5 : 0.8,
+    priority: path === "/" ? 1 : path === "/geo-test" ? 0.9 : path.startsWith("/about") ? 0.5 : 0.8,
   }));
 }
