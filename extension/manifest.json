@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsMyIPv4 Geo Test",
+  "version": "0.1.0",
+  "description": "Apply a test geolocation to the active tab for QA and localization testing.",
+  "permissions": ["debugger", "storage", "activeTab"],
+  "action": {
+    "default_title": "Geo Test",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}
