@@ -4,8 +4,8 @@ import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { SITE_NAME, SITE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Geolocation Testing Tool for Browser QA | Geo Test",
-  description: "Compare browser geolocation, timezone, locale and IP location. Save test locations now and use them with the upcoming Geo Test browser extension.",
+  title: "Browser Geolocation vs IP Location | Geo Test",
+  description: "Compare public IP location, browser coordinates, timezone and locale. Save Geo Test reference profiles for repeatable website location checks.",
   alternates: { canonical: "/geo-test" },
 };
 
@@ -23,8 +23,8 @@ export default function GeoTestPage() {
     <SiteHeader />
     <main className="container">
       <section className="hero">
-        <h1>Test what location your browser reveals</h1>
-        <p>Geo Test compares browser geolocation, timezone, locale and your public IP location so you can spot mismatches and prepare reusable location profiles for QA testing.</p>
+        <h1>Browser geolocation vs IP location</h1>
+        <p>Inspect browser coordinates, timezone and locale separately, then compare them with the public IP information on WhatsMyIPv4. Save reference profiles for repeatable website QA.</p>
         <div className="cta-row">
           <a className="cta cta-primary" href="/geo-test/signup">Create free account</a>
           <a className="cta" href="/geo-test/login">Sign in</a>
@@ -32,8 +32,8 @@ export default function GeoTestPage() {
       </section>
 
       <section className="content">
-        <h2>Browser geolocation testing without changing your normal IP tools</h2>
-        <p>The existing WhatsMyIPv4 tools remain free. Geo Test adds an account layer for people who need repeatable location diagnostics and, later, browser-level location overrides for legitimate testing and privacy checks.</p>
+        <h2>Four location signals that are easy to confuse</h2>
+        <p>An IP location is an estimate associated with a network address. Browser geolocation uses a permission-controlled browser API. Timezone and locale describe browser settings, not a person's exact physical address. Geo Test keeps these readings separate so a mismatch is easier to investigate.</p>
         <div className="card-grid">{features.map(([title, desc]) => <article className="tool-card" key={title}><span className="tc-label">{title}</span><span className="tc-desc">{desc}</span></article>)}</div>
       </section>
 
@@ -46,11 +46,12 @@ export default function GeoTestPage() {
           <li>Saved latitude, longitude and timezone profiles</li>
           <li>Comparison with the public IP details available on the main site</li>
         </ul>
+        <p>Saving a profile does not change your public IP address or apply a location to other websites. Use profiles as QA references, then test authorized sites with the appropriate browser developer tools.</p>
       </section>
 
       <section className="content">
         <h2>Extension coming next</h2>
-        <p>The planned Chrome/Edge extension will apply saved profiles to supported test tabs so developers and QA teams can test geolocation-aware experiences. The website remains the account, diagnostics and profile-management hub.</p>
+        <p>The planned Chrome/Edge extension is not part of the current website workflow. When released, it is intended to apply saved profiles to supported test tabs. Today, the website is the account, diagnostics and profile-management hub.</p>
         <p><strong>Planned pricing:</strong> Free for basic diagnostics and saved profiles, with Pro and Team plans for extension profiles, per-site rules, timezone matching, shared workspaces and test history.</p>
       </section>
     </main>
