@@ -32,7 +32,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuide(slug);
-  if (!guide) return { title: "Guide not found" };
+  if (!guide) notFound();
   return {
     title: guide.title,
     description: guide.description,

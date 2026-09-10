@@ -20,7 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const cat = getCategory(slug);
-  if (!cat) return { title: "Topic not found" };
+  if (!cat) notFound();
   return {
     title: cat.title,
     description: cat.description,

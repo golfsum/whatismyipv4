@@ -5,8 +5,6 @@ import { GUIDES } from "@/lib/guides";
 import { CATEGORIES } from "@/lib/categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   const paths = Array.from(
     new Set([
       ...TOOLS.map((t) => t.href),
@@ -21,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return paths.map((path) => ({
     url: `${SITE_URL}${path === "/" ? "" : path}`,
-    lastModified: now,
     changeFrequency: path === "/" ? "daily" : "weekly",
     priority: path === "/" ? 1 : path === "/geo-test" ? 0.9 : path.startsWith("/about") ? 0.5 : 0.8,
   }));
